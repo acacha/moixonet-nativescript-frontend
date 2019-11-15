@@ -24,8 +24,8 @@
     "android23": {
         "platformName": "Android",
         "platformVersion": "6.0",
-        "deviceName": "Emulator-Api23-Default",
-        "avd": "Emulator-Api23-Default",
+        "deviceName": "Emulator-Api23-Google",
+        "avd": "Emulator-Api23-Google",
         "lt": 60000,
         "newCommandTimeout": 720,
         "noReset": false,
