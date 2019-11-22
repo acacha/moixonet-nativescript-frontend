@@ -43,6 +43,7 @@
   "gitHead": "6894b56740adbd34cb17ebf10afa6a05768747bf",
   "readme": "NativeScript Application",
   "scripts": {
-    "e2e": "node ./node_modules/nativescript-dev-appium/check-dev-deps.js &&  mocha --opts ./e2e/config/mocha.opts "
+    "e2e": "node ./node_modules/nativescript-dev-appium/check-dev-deps.js &&  mocha --opts ./e2e/config/mocha.opts ",
+    "android29": "npm run e2e -- --runType android29"
   }
 }

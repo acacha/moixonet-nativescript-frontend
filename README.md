@@ -65,7 +65,7 @@ Dos coses, compte amb la comanda emulador que s'està utilitzant (no funciona /h
 Emulator-Api29-Google
 ```
 
-També cal activar acceleració KVM si ud dona l'error:
+També cal activar acceleració KVM si us dona l'error:
 
 ```
 Please ensure KVM is properly installed and usable.
@@ -106,7 +106,7 @@ Descarregar:
 https://github.com/appium/appium-desktop/releases/tag/v1.15.1
 ```
 
-Baixeu la versió amb extensíó .AppImage 
+Baixeu la versió amb extensió .AppImage 
 
 Per instal·lar aneu a la carpeta baixades i feu:
 

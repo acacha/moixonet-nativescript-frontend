@@ -1,14 +1,14 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 1,
+    "tests": 2,
     "passes": 0,
     "pending": 0,
-    "failures": 1,
-    "start": "2019-11-15T11:50:06.561Z",
-    "end": "2019-11-15T11:51:18.779Z",
-    "duration": 72218,
-    "testsRegistered": 1,
+    "failures": 2,
+    "start": "2019-11-15T15:36:12.370Z",
+    "end": "2019-11-15T15:36:33.972Z",
+    "duration": 21602,
+    "testsRegistered": 2,
     "passPercent": 0,
     "pendingPercent": 0,
     "other": 0,
@@ -19,7 +19,7 @@
     "pendingPercentClass": "danger"
   },
   "suites": {
-    "uuid": "f45902be-f605-4161-9e6b-d9ca4ceafb79",
+    "uuid": "c2b0701b-d0b6-413e-94ed-b8a88b927f9a",
     "title": "",
     "fullFile": "",
     "file": "",
@@ -28,7 +28,7 @@
         "title": "\"before all\" hook: start server",
         "fullTitle": "\"before all\" hook: start server",
         "timedOut": false,
-        "duration": 29677,
+        "duration": 4046,
         "pass": false,
         "fail": false,
         "pending": false,
@@ -36,7 +36,7 @@
         "code": "nsAppium.nsCapabilities.testReporter.context = this;\nawait nsAppium.startServer();",
         "err": {},
         "isRoot": true,
-        "uuid": "1a95bce6-2e42-4969-9e38-28743f03d2d8",
+        "uuid": "741019a3-06bc-4ba4-8c1c-4b13437d084b",
         "isHook": true,
         "skipped": false
       }
@@ -46,14 +46,14 @@
         "title": "\"after all\" hook: stop appium server",
         "fullTitle": "\"after all\" hook: stop appium server",
         "timedOut": false,
-        "duration": 2270,
+        "duration": 1138,
         "pass": false,
         "fail": false,
         "pending": false,
         "code": "await nsAppium.stopServer();",
         "err": {},
         "isRoot": true,
-        "uuid": "5532464d-c9fb-4317-bf04-67e85b4f7fc0",
+        "uuid": "4474548b-2f00-417c-89ee-bb5098602cab",
         "isHook": true,
         "skipped": false
       }
@@ -61,7 +61,7 @@
     "tests": [],
     "suites": [
       {
-        "uuid": "ee481efa-8b69-4df1-af80-4fea5f6ae6fd",
+        "uuid": "35a8135a-68e2-4ba3-9898-6aa065dcc51a",
         "title": "sample scenario",
         "fullFile": "/home/sergi/Code/acacha/moixonet-nativescript-frontend/e2e/sample.e2e-spec.js",
         "file": "/e2e/sample.e2e-spec.js",
@@ -70,15 +70,15 @@
             "title": "\"before all\" hook",
             "fullTitle": "sample scenario \"before all\" hook",
             "timedOut": false,
-            "duration": 32230,
+            "duration": 9734,
             "pass": false,
             "fail": false,
             "pending": false,
             "context": "[\n  \"appium_driver_started\",\n  \"./appium_driver_started.png\"\n]",
-            "code": "nsAppium.nsCapabilities.testReporter.context = this; \ndriver = await nsAppium.createDriver();",
+            "code": "nsAppium.nsCapabilities.testReporter.context = this;\ndriver = await nsAppium.createDriver();",
             "err": {},
             "isRoot": false,
-            "uuid": "413c7d1a-fa71-4eac-8471-cd754603ffa2",
+            "uuid": "846a7ac9-b21e-4382-9c8a-21632b566516",
             "isHook": true,
             "skipped": false
           }
@@ -88,7 +88,7 @@
             "title": "\"after all\" hook",
             "fullTitle": "sample scenario \"after all\" hook",
             "timedOut": false,
-            "duration": 1824,
+            "duration": 1001,
             "pass": false,
             "fail": false,
             "pending": false,
@@ -96,7 +96,7 @@
             "code": "await driver.quit();\nconsole.log(\"Quit driver!\");",
             "err": {},
             "isRoot": false,
-            "uuid": "28f245aa-bdb6-44c9-b3bf-b7de5483ba88",
+            "uuid": "cba2655d-54b5-4962-b139-d99289e8458c",
             "isHook": true,
             "skipped": false
           },
@@ -104,14 +104,14 @@
             "title": "\"after each\" hook",
             "fullTitle": "sample scenario \"after each\" hook",
             "timedOut": false,
-            "duration": 892,
+            "duration": 80,
             "pass": false,
             "fail": false,
             "pending": false,
             "code": "if (this.currentTest.state === \"failed\") {\n    await driver.logTestArtifacts(this.currentTest.title);\n}",
             "err": {},
             "isRoot": false,
-            "uuid": "606aa037-2d73-4704-90c7-58f2bc7727b0",
+            "uuid": "eabb5892-aed8-48ee-aff4-ed206a1643f2",
             "isHook": true,
             "skipped": false
           }
@@ -121,7 +121,7 @@
             "title": "should find an element by text",
             "fullTitle": "sample scenario should find an element by text",
             "timedOut": false,
-            "duration": 5318,
+            "duration": 5410,
             "state": "failed",
             "pass": false,
             "fail": true,
@@ -133,7 +133,27 @@
               "estack": "Error: [waitForElementByXPath(\"//*[contains(translate(@content-desc,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'welcome') or contains(translate(@resource-id,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'welcome') or contains(translate(@text,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'welcome')]\",5000)] Element condition wasn't satisfied!\n    at /home/sergi/Code/acacha/moixonet-nativescript-frontend/node_modules/wd/lib/commands.js:979:12\n    at /home/sergi/Code/acacha/moixonet-nativescript-frontend/node_modules/wd/lib/commands.js:884:11\n    at /home/sergi/Code/acacha/moixonet-nativescript-frontend/node_modules/wd/lib/commands.js:966:13\n    at /home/sergi/Code/acacha/moixonet-nativescript-frontend/node_modules/wd/node_modules/async/dist/async.js:3888:9\n    at /home/sergi/Code/acacha/moixonet-nativescript-frontend/node_modules/wd/node_modules/async/dist/async.js:473:16\n    at replenish (node_modules/wd/node_modules/async/dist/async.js:1006:25)\n    at /home/sergi/Code/acacha/moixonet-nativescript-frontend/node_modules/wd/node_modules/async/dist/async.js:1016:9\n    at eachOfLimit (node_modules/wd/node_modules/async/dist/async.js:1041:24)\n    at /home/sergi/Code/acacha/moixonet-nativescript-frontend/node_modules/wd/node_modules/async/dist/async.js:1046:16\n    at _parallel (node_modules/wd/node_modules/async/dist/async.js:3879:5)\n    at Object.series (node_modules/wd/node_modules/async/dist/async.js:4735:5)\n    at /home/sergi/Code/acacha/moixonet-nativescript-frontend/node_modules/wd/lib/commands.js:964:15\n    at /home/sergi/Code/acacha/moixonet-nativescript-frontend/node_modules/wd/lib/promise-webdriver.js:52:11\n    at _fulfilled (node_modules/q/q.js:854:54)\n    at /home/sergi/Code/acacha/moixonet-nativescript-frontend/node_modules/q/q.js:883:30\n    at Promise.promise.promiseDispatch (node_modules/q/q.js:816:13)\n    at /home/sergi/Code/acacha/moixonet-nativescript-frontend/node_modules/q/q.js:624:44\n    at runSingle (node_modules/q/q.js:137:13)\n    at flush (node_modules/q/q.js:125:13)\n    at process._tickCallback (internal/process/next_tick.js:61:11)"
             },
             "isRoot": false,
-            "uuid": "fed1f32d-f39c-4d4d-a22a-1d384dd90053",
+            "uuid": "6cb04767-c7b0-4282-9059-82d3737997a5",
+            "isHook": false,
+            "skipped": false
+          },
+          {
+            "title": "status",
+            "fullTitle": "sample scenario status",
+            "timedOut": false,
+            "duration": 6,
+            "state": "failed",
+            "pass": false,
+            "fail": true,
+            "pending": false,
+            "context": "[\n  \"status\",\n  \"./status.png\"\n]",
+            "code": "const status = await driver.status();\nconsole.log(status)",
+            "err": {
+              "message": "TypeError: driver.status is not a function",
+              "estack": "TypeError: driver.status is not a function\n    at Context.<anonymous> (e2e/sample.e2e-spec.js:30:37)\n    at process.topLevelDomainCallback (domain.js:126:23)"
+            },
+            "isRoot": false,
+            "uuid": "8c01b9b3-cb9f-4392-ada0-e85f6574b804",
             "isHook": false,
             "skipped": false
           }
@@ -141,11 +161,12 @@
         "suites": [],
         "passes": [],
         "failures": [
-          "fed1f32d-f39c-4d4d-a22a-1d384dd90053"
+          "6cb04767-c7b0-4282-9059-82d3737997a5",
+          "8c01b9b3-cb9f-4392-ada0-e85f6574b804"
         ],
         "pending": [],
         "skipped": [],
-        "duration": 5318,
+        "duration": 5416,
         "root": false,
         "rootEmpty": false,
         "_timeout": 999999
