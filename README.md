@@ -1,7 +1,39 @@
+# Guia 22 novembre
+
+Repàs:
+- tns run android per executar al emulador
+- tns devices: mostra els dispositius disponibles
+- Testos E2E:  
+  - npm run e2e
+  - Per a un dispositiu concret:
+    - npm run android29 (vegeu package.json)
+    
+- https://gist.github.com/acacha/461541f97a6c4f3eaefef6be9e1122fc
+
+UNIT TESTING:
+- https://docs.nativescript.org/tooling/testing/testing
+ - tns test init
+
+TROUBLES:
+- https://github.com/NativeScript/NativeScript/issues/3746
+  - ActionItem no suporta automationText
+  - NavigationButton no suporta automationText
+  
+# Tasques
+
+- Contingut de la pàgina quan no hi ha cap canal:
+  - Canviar la icona Casa
+  - Navigation Bootom en comptes de tabView 
+  - https://github.com/nstudio/nativescript-snackbar
+  
+  
+## Config eslint:
+
+Copieu els fitxers .eslintrc.js i els paquets extres a package.json 
+
 # DEURES
 
 EMULADOR AMB UN SAMSUNG GALAXY NEXUS o altre telèfon
-
 
 # TESTS
 

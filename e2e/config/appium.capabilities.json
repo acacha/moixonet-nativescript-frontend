@@ -98,6 +98,17 @@
       "fullReset": false,
       "app": ""
     },
+  "android29alt": {
+      "platformName": "Android",
+      "platformVersion": "29",
+      "deviceName": "test",
+      "avd": "test",
+      "lt": 60000,
+      "newCommandTimeout": 720,
+      "noReset": false,
+      "fullReset": false,
+      "app": ""
+    },
     "sim.iPhone7": {
         "platformName": "iOS",
         "platformVersion": "/12.*/",
