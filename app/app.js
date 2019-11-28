@@ -1,9 +1,12 @@
-import VueDevtools from 'nativescript-vue-devtools'
+/* eslint-disable import/order */
+import store from './store'
 import Vue from 'nativescript-vue'
-import RadSideDrawer from 'nativescript-ui-sidedrawer/vue'
 import App from './components/App'
 import Home from './components/Home'
 import DrawerContent from './components/DrawerContent'
+import RadSideDrawer from 'nativescript-ui-sidedrawer/vue'
+import VueDevtools from 'nativescript-vue-devtools'
+
 Vue.use(RadSideDrawer)
 Vue.use(VueDevtools)
 // REAL DEVICE
@@ -21,5 +24,6 @@ new Vue({
         h(Home, { slot: 'mainContent' })
       ]
     )
-  }
+  },
+  store
 }).$start()

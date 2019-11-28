@@ -12,6 +12,12 @@
     - Més endavant: 
       - Els managers poden subscriure usuaris a un canal privat (via invitació ha d'acceptar l'usuari)
       - Els usuaris logats poden demanar inscriure's a un canal: els managers han d'aprovar-ho
+      
+# TROUBLESOOTING
+
+## Peta al afegir Vuex HTMLElement is not defined
+
+https://stackoverflow.com/questions/58672942/htmlelement-is-not-defined-nativescript-vue      
 
 # VUEX 
 - Afegir vuex a nativescript: https://www.nativescript.org/blog/working-with-vuex-in-your-nativescript-vue-application
@@ -32,7 +38,7 @@ mkdir store
 i l'importeu a app.js
 
 ```
-import store from './store
+import store from './store'
 ```
 
 Afegiu store a la línia new Vue al final fitxer app.js.
