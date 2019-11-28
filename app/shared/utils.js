@@ -14,3 +14,8 @@ export const closeDrawer = () => {
     drawerNativeView.closeDrawer()
   }
 }
+
+// export const openURL = (url) => {
+//   console.log('TODO OPEN URL!!!!!!!!!!!')
+//   console.log(url)
+// }

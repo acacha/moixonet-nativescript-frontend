@@ -5,7 +5,6 @@ import store from './store'
 import App from './components/App'
 import Home from './components/Home'
 import DrawerContent from './components/DrawerContent'
-
 Vue.use(RadSideDrawer)
 Vue.use(VueDevtools)
 // REAL DEVICE

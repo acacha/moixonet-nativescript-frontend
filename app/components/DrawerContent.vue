@@ -1,11 +1,14 @@
 <template lang="html">
   <GridLayout rows="auto, *" class="nt-drawer__content">
-    <StackLayout row="0" class="nt-drawer__header">
+    <StackLayout v-if="loggedIn && user !==null" row="0" class="nt-drawer__header">
       <Image class="nt-drawer__header-image fas t-36" src.decode="font://&#xf2bd;" />
-      <Label automation-text="username_label" class="nt-drawer__header-brand" text="User Name" />
-      <Label automation-text="useremail_label" class="nt-drawer__header-footnote" text="username@mail.com" />
+      <Label automation-text="username_label" class="nt-drawer__header-brand" :text="user.name" />
+      <Label automation-text="useremail_label" class="nt-drawer__header-footnote" :text="user.email" />
     </StackLayout>
-
+    <StackLayout v-else row="0" class="nt-drawer__header">
+      <Button text="Login" @tap="login" />
+      <Button text="Register" @tap="register" />
+    </StackLayout>
     <ScrollView row="1" class="nt-drawer__body">
       <StackLayout>
         <GridLayout automation-text="nav_link_home" columns="auto, *" :class="'nt-drawer__list-item' + (selectedPage === 'Home' ? ' -selected': '')" @tap="onNavigationItemTap(Home)">
@@ -52,6 +55,7 @@
 <script>
 /* eslint-disable vue/no-unused-components */
 
+import { mapGetters } from 'vuex'
 import Home from './Home'
 import Browse from './Browse'
 import Featured from './Featured'
@@ -61,6 +65,7 @@ import ChannelsList from './ChannelsList'
 import Channel from './Channel'
 import * as utils from '~/shared/utils'
 import SelectedPageService from '~/shared/selected-page-service'
+import url from '@/utils/url'
 
 export default {
   components: {
@@ -87,6 +92,8 @@ export default {
     // console.log(this)
     // console.log(this.$store)
     console.log(this.$store.state.auth.loggedIn)
+    console.log('LoggedIn:')
+    console.log(this.$store.getters.loggedIn)
     SelectedPageService.getInstance().selectedPage$
       .subscribe((selectedPage) => { this.selectedPage = selectedPage })
   },
@@ -96,7 +103,31 @@ export default {
         clearHistory: true
       })
       utils.closeDrawer()
+    },
+    login () {
+      console.log('TODO LOGIN')
+    },
+    register () {
+      // alert('HEY QUE PAIXA!!!')
+      url.open('https://www.google.com')
+      // utils.openUrl('http://moixonet-backend.test/register')
+      // function pageLoaded (args) {
+      //   const page = args.object
+      //   page.bindingContext = { }
+      // }
+      //
+      // exports.pageLoaded = pageLoaded
+      //
+      // exports.launch = function (url) {
+      //   utils.openUrl(url)
+      // }
     }
+  },
+  computed: {
+    ...mapGetters([
+      'loggedIn',
+      'user'
+    ])
   }
 }
 </script>
