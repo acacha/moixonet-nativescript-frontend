@@ -1,22 +1,30 @@
+<!--suppress ALL -->
 <template>
-    <Page class="page">
-        <ActionBar class="action-bar">
-          <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" @tap="$navigateBack"/>
-          <ActionItem icon="res://menu"
-                        text="hamburguer_icon"
-                android:visibility="collapsed"
-                @tap="$navigateBack"
-                ios.position="left">
-          </ActionItem>
-          <TextField v-model="channel" hint="Canal..." @textChange="onTextChange" @focus="onFocus" @blur="onBlur" @returnPress="onReturnPress" />
-        </ActionBar>
+  <Page class="page">
+    <ActionBar class="action-bar">
+      <NavigationButton text="Go Back" android-system-icon="ic_menu_back" @tap="$navigateBack" />
+      <ActionItem
+        icon="res://menu"
+        text="hamburguer_icon"
+        android:visibility="collapsed"
+        ios.position="left"
+        @tap="$navigateBack"
+      />
+      <TextField
+        v-model="channel"
+        hint="Canal..."
+        @textChange="onTextChange"
+        @focus="onFocus"
+        @blur="onBlur"
+        @returnPress="onReturnPress"
+      />
+    </ActionBar>
 
-        <GridLayout class="page__content">
-            <Label class="page__content-placeholder" :text="message"></Label>
-<!--            TODO PUBLISHED CHANNELS LIST AND FILTERED-->
-        </GridLayout>
-
-    </Page>
+    <GridLayout class="page__content">
+      <Label class="page__content-placeholder" :text="message" />
+      <!--            TODO PUBLISHED CHANNELS LIST AND FILTERED-->
+    </GridLayout>
+  </Page>
 </template>
 
 <script>
