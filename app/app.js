@@ -5,8 +5,13 @@ import store from './store'
 import App from './components/App'
 import Home from './components/Home'
 import DrawerContent from './components/DrawerContent'
+import eventBus from './plugins/eventBus'
+import axios from './plugins/axios'
+
 Vue.use(RadSideDrawer)
 Vue.use(VueDevtools)
+Vue.use(eventBus)
+Vue.use(axios)
 // REAL DEVICE
 // Vue.use(VueDevtools, { host: '192.168.1.42' })
 

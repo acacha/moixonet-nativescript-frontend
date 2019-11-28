@@ -89,6 +89,8 @@ export default {
   },
   mounted () {
     console.log('MOUNTED!!!!!!!!!!!!!!')
+    console.log('AXIOS:')
+    console.log(this.$axios)
     // console.log(this)
     // console.log(this.$store)
     console.log(this.$store.state.auth.loggedIn)
@@ -109,7 +111,8 @@ export default {
     },
     register () {
       // alert('HEY QUE PAIXA!!!')
-      url.open('https://www.google.com')
+      url.open('https://moixonet.acacha.scool.cat/register')
+      // url.open('http://www.google.com')
       // utils.openUrl('http://moixonet-backend.test/register')
       // function pageLoaded (args) {
       //   const page = args.object

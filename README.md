@@ -12,8 +12,154 @@
     - Més endavant: 
       - Els managers poden subscriure usuaris a un canal privat (via invitació ha d'acceptar l'usuari)
       - Els usuaris logats poden demanar inscriure's a un canal: els managers han d'aprovar-ho
+# AXIOS
+
+```
+npm install --save axios 
+```
+
+Copiar el plugin axios de la carpeta plugin i instal·lar el plugin a app.js (veure exemple professor)
+
+- httpAdapter axios peta! Simplement per afegir linia import httpAdapter from 'axios/lib/adapters/http' dona error 
+An uncaught Exception occurred on "main" thread.
+Unable to create application com.tns.NativeScriptApplication: com.tns.NativeScriptException: Error calling module function 
+TypeError: Cannot read property 'slice' of undefined
+File: (file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:86360:94)
+
+StackTrace: 
+(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:86360:95)
+	at ../node_modules/readable-stream/lib/_stream_writable.js(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:86979:30)
+	at __webpack_require__(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:751:30)
+	at fn(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:121:20)
+	at ../node_modules/readable-stream/readable.js(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:87201:22)
+	at __webpack_require__(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:751:30)
+	at fn(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:121:20)
+	at ../node_modules/stream-browserify/index.js(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:97583:19)
+	at __webpack_require__(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:751:30)
+	at fn(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:121:20)
+	at ../node_modules/follow-redirects/index.js(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:58554:16)
+	at __webpack_require__(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:751:30)
+	at fn(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:121:20)
+	at (file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:52252:18)
+	at ../node_modules/axios/lib/adapters/http.js(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:52517:30)
+	at __webpack_require__(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:751:30)
+	at fn(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:121:20)
+	at ./plugins/axios.js(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/bundle.js:3057:81)
+	at __webpack_require__(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:751:30)
+	at fn(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:121:20)
+	at (file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/bundle.js:2055:72)
+	at ./app.js(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/bundle.js:2132:30)
+	at __webpack_require__(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:751:30)
+	at checkDeferredModules(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:44:23)
+	at webpackJsonpCallback(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:31:19)
+	at (file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/bundle.js:2:57)
+	at require(:1:266)
+
+
+TypeError: Cannot read property 'slice' of undefined
+
+StackTrace:
+java.lang.RuntimeException: Unable to create application com.tns.NativeScriptApplication: com.tns.NativeScriptException: Error calling module function 
+TypeError: Cannot read property 'slice' of undefined
+File: (file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:86360:94)
+
+StackTrace: 
+(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:86360:95)
+	at ../node_modules/readable-stream/lib/_stream_writable.js(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:86979:30)
+	at __webpack_require__(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:751:30)
+	at fn(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:121:20)
+	at ../node_modules/readable-stream/readable.js(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:87201:22)
+	at __webpack_require__(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:751:30)
+	at fn(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:121:20)
+	at ../node_modules/stream-browserify/index.js(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:97583:19)
+	at __webpack_require__(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:751:30)
+	at fn(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:121:20)
+	at ../node_modules/follow-redirects/index.js(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:58554:16)
+	at __webpack_require__(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:751:30)
+	at fn(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:121:20)
+	at (file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:52252:18)
+	at ../node_modules/axios/lib/adapters/http.js(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:52517:30)
+	at __webpack_require__(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:751:30)
+	at fn(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:121:20)
+	at ./plugins/axios.js(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/bundle.js:3057:81)
+	at __webpack_require__(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:751:30)
+	at fn(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:121:20)
+	at (file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/bundle.js:2055:72)
+	at ./app.js(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/bundle.js:2132:30)
+	at __webpack_require__(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:751:30)
+	at checkDeferredModules(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:44:23)
+	at webpackJsonpCallback(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:31:19)
+	at (file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/bundle.js:2:57)
+	at require(:1:266)
+
+
+TypeError: Cannot read property 'slice' of undefined
+	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:5406)
+	at android.app.ActivityThread.-wrap2(ActivityThread.java)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1545)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:154)
+	at android.app.ActivityThread.main(ActivityThread.java:6119)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:886)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:776)
+Caused by: com.tns.NativeScriptException: Error calling module function 
+TypeError: Cannot read property 'slice' of undefined
+File: (file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:86360:94)
+
+StackTrace: 
+(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:86360:95)
+	at ../node_modules/readable-stream/lib/_stream_writable.js(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:86979:30)
+	at __webpack_require__(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:751:30)
+	at fn(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:121:20)
+	at ../node_modules/readable-stream/readable.js(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:87201:22)
+	at __webpack_require__(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:751:30)
+	at fn(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:121:20)
+	at ../node_modules/stream-browserify/index.js(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:97583:19)
+	at __webpack_require__(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:751:30)
+	at fn(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:121:20)
+	at ../node_modules/follow-redirects/index.js(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:58554:16)
+	at __webpack_require__(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:751:30)
+	at fn(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:121:20)
+	at (file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:52252:18)
+	at ../node_modules/axios/lib/adapters/http.js(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/vendor.js:52517:30)
+	at __webpack_require__(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:751:30)
+	at fn(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:121:20)
+	at ./plugins/axios.js(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/bundle.js:3057:81)
+	at __webpack_require__(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:751:30)
+	at fn(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:121:20)
+	at (file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/bundle.js:2055:72)
+	at ./app.js(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/bundle.js:2132:30)
+	at __webpack_require__(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:751:30)
+	at checkDeferredModules(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:44:23)
+	at webpackJsonpCallback(file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/runtime.js:31:19)
+	at (file:///data/data/org.nativescript.moixonetnativescriptfrontend/files/app/bundle.js:2:57)
+	at require(:1:266)
+
+
+TypeError: Cannot read property 'slice' of undefined
+	at com.tns.Runtime.runModule(Native Method)
+	at com.tns.Runtime.runModule(Runtime.java:674)
+	at com.tns.Runtime.run(Runtime.java:666)
+	at com.tns.NativeScriptApplication.onCreate(NativeScriptApplication.java:21)
+	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1024)
+	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:5403)
+	... 8 more
+
+- https://vuejsdevelopers.com/2018/07/02/vue-js-native-script-vue-http-web-service/
+
       
 # TROUBLESOOTING
+
+## Accés a localhost desde el mòbil
+
+No és possible, per tant cal accedir a la API en explotació:
+
+https://moixonet.acacha.scool.cat
+
+i tenim URLS públiques no calen autenticació:
+
+https://moixonet.acacha.scool.cat/api/v1/published_channels
 
 ## Peta al afegir Vuex HTMLElement is not defined
 

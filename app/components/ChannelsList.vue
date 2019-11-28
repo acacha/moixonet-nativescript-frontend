@@ -5,65 +5,71 @@
 >
   <Page class="page">
     <ActionBar class="action-bar">
-      <NavigationButton text="Go Back" android-system-icon="ic_menu_back" @tap="$navigateBack" />
+      <NavigationButton ios:visibility="collapsed" icon="res://menu" @tap="onDrawerButtonTap" />
       <ActionItem
         icon="res://menu"
-        text="hamburguer_icon"
         android:visibility="collapsed"
         ios.position="left"
-        @tap="$navigateBack"
+        @tap="onDrawerButtonTap"
       />
-      <Label class="action-bar-title" automation-text="action_bar_label" text="Els meus canals" />
+      <Label class="action-bar-title" text="CANALS PROVA" />
     </ActionBar>
 
-    <GridLayout class="page__content">
-      <ListView for="item in channels" @itemTap="onItemTap">
+    <StackLayout>
+      <Button text="Refresh" @tap="refresh"></Button>
+      <ListView for="channel in channels" @itemTap="onItemTap">
         <v-template>
-          <Label :text="item.name" />
+          <Label :text="channel.name" />
         </v-template>
       </ListView>
-    </GridLayout>
+    </StackLayout>
   </Page>
 </template>
 
 <script>
+import SelectedPageService from '../shared/selected-page-service'
+// import channelsFixture from '../../e2e/fixtures/channels'
+import * as utils from '~/shared/utils'
 
 export default {
   name: 'ChannelsList',
   data () {
     return {
-      channels: [
-        {
-          id: 1,
-          name: 'Canal 1'
-        },
-        {
-          id: 2,
-          name: 'Canal 2'
-        },
-        {
-          id: 3,
-          name: 'Canal 3'
-        },
-        {
-          id: 4,
-          name: 'Canal 4'
-        }
-      ]
+      // channels: channelsFixture
+      channels: []
     }
   },
+  mounted () {
+    SelectedPageService.getInstance().updateSelectedPage('Browse')
+  },
+  async created () {
+    await this.refresh()
+  },
   methods: {
+    onDrawerButtonTap () {
+      utils.showDrawer()
+    },
     onItemTap () {
       console.log('ITEM TAP!')
+    },
+    async refresh () {
+      try {
+        const result = await this.$axios.get('/api/v1/channels')
+        this.channels = result.data
+        console.log('result:')
+        console.log(result)
+      } catch (error) {
+        console.log(error)
+      }
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
-    // Start custom common variables
-    @import '~@nativescript/theme/scss/variables/blue';
-    // End custom common variables
+  // Start custom common variables
+  @import '~@nativescript/theme/scss/variables/blue';
+  // End custom common variables
 
-    // Custom styles
+  // Custom styles
 </style>
