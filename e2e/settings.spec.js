@@ -30,5 +30,4 @@ describe('settings', () => {
     // ASSERT SHOW HOME
     assert.isTrue(await driver.compareScreen('settings-screen'))
   })
-
 })
