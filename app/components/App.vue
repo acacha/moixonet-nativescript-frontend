@@ -1,10 +1,10 @@
 <template lang="html">
   <RadSideDrawer ref="drawer" drawer-location="Left" gestures-enabled="true" :drawer-transition="transition">
     <StackLayout ~drawerContent background-color="#ffffff">
-      <slot name="drawerContent"></slot>
+      <slot name="drawerContent" />
     </StackLayout>
     <Frame ref="drawerMainContent" ~mainContent>
-      <slot name="mainContent"></slot>
+      <slot name="mainContent" />
     </Frame>
   </RadSideDrawer>
 </template>

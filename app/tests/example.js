@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // A sample Mocha test
 describe('Array', function () {
   describe('#indexOf()', function () {
