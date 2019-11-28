@@ -12,6 +12,13 @@
     - Més endavant: 
       - Els managers poden subscriure usuaris a un canal privat (via invitació ha d'acceptar l'usuari)
       - Els usuaris logats poden demanar inscriure's a un canal: els managers han d'aprovar-ho
+
+# DEBUG
+
+``` 
+tns debug android
+``` 
+
 # AXIOS
 
 ```
