@@ -1,7 +1,7 @@
 import Vue from 'nativescript-vue'
 import Vuex from 'vuex'
-import users from './modules/auth'
-import tenants from './modules/channels'
+import auth from './modules/auth'
+import channels from './modules/channels'
 
 Vue.use(Vuex)
 
@@ -9,8 +9,8 @@ const debug = process.env.NODE_ENV !== 'production'
 
 const store = new Vuex.Store({
   modules: {
-    users,
-    tenants
+    auth,
+    channels
   },
   strict: debug
 })

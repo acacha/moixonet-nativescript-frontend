@@ -17,7 +17,27 @@
 
 ## Peta al afegir Vuex HTMLElement is not defined
 
+https://medium.com/@bgohsman_47507/nativescript-vue-with-vuex-and-vue-devtools-no-really-fe860e802d10
 https://stackoverflow.com/questions/58672942/htmlelement-is-not-defined-nativescript-vue      
+
+## No es veu Vuex a vue dev tools
+
+Afegir línia HTMLElement a:
+
+```
+new webpack.DefinePlugin({
+  'global.TNS_WEBPACK': 'true',
+  TNS_ENV: JSON.stringify(mode),
+  process: 'global.process',
+  HTMLElement: function() {
+    return false;
+  },
+}),
+```
+
+https://medium.com/@bgohsman_47507/nativescript-vue-with-vuex-and-vue-devtools-no-really-fe860e802d10
+https://stackoverflow.com/questions/58672942/htmlelement-is-not-defined-nativescript-vue      
+
 
 # VUEX 
 - Afegir vuex a nativescript: https://www.nativescript.org/blog/working-with-vuex-in-your-nativescript-vue-application

@@ -83,6 +83,10 @@ export default {
     }
   },
   mounted () {
+    console.log('MOUNTED!!!!!!!!!!!!!!')
+    // console.log(this)
+    // console.log(this.$store)
+    console.log(this.$store.state.auth.loggedIn)
     SelectedPageService.getInstance().selectedPage$
       .subscribe((selectedPage) => { this.selectedPage = selectedPage })
   },
