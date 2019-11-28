@@ -1,3 +1,71 @@
+# Guia 29 novembre
+
+- LocalStorage: https://developer.mozilla.org/es/docs/Web/API/Window/localStorage
+- Base de dades local (seguretat): només per guardar informació pública i no crítica
+- Vuex: seran les accions les encarregades de modificar tant l'estat Vuex com la base de dades local
+  - Similar a utilitzar axios per modificar base de dades remota/backend però ara la base de dades és local
+- Canals:
+  - Poden ser públics o privats
+  - Els canals publics es poden cercar (els privats no) i els usuaris de tot tipus (guest o regular users) es poden subscriure a un canal
+  - Canals privats: 
+    - només accessibles a usuaris logats
+    - Més endavant: 
+      - Els managers poden subscriure usuaris a un canal privat (via invitació ha d'acceptar l'usuari)
+      - Els usuaris logats poden demanar inscriure's a un canal: els managers han d'aprovar-ho
+
+# VUEX 
+- Afegir vuex a nativescript: https://www.nativescript.org/blog/working-with-vuex-in-your-nativescript-vue-application
+  - Using vue plugins: https://nativescript-vue.org/en/docs/getting-started/vue-plugins/
+ 
+```
+$ npm install --save vuex
+```
+
+A app.js instal·leu plugin:
+
+Creeu una carpeta/mòdul store basant-vos en el codi del professor
+
+```
+mkdir store
+``` 
+
+i l'importeu a app.js
+
+```
+import store from './store
+```
+
+Afegiu store a la línia new Vue al final fitxer app.js.
+  
+## Module AUTH
+
+Copiem el funcionament de mòdul auth de nuxt:
+- state:
+  - loggedIn: booleà true/false indica si l'usuari éstà logat o no
+  - user: Objecte amb la info de l'usuari logat o null sinó hi ha cap usuari logat
+- commits:
+  - auth/SET:
+    SET (state, payload) {
+      Vue.set(state, payload.key, payload.value)
+    }
+  - Estrategia típica un sol commit per modificar objecte state
+  - vue.set: https://vuejs.org/v2/guide/reactivity.html
+    - Permet superar la límitació de vue de ser reactiu a modificacions objectes
+     
+## Tasques
+
+Modificacions a la app:
+- Drawer esquerra:
+  - Apareix info d'usuari només si està logat (utilitzant getter loggedIn mostri auth.state.loggedIn)
+  - Sinó apareix botons de login/registre
+    - El registre el podem fer amb un link al backend pàgina de registre         
+
+ESLINT:
+- Configurar eslint per tal faci modificacions a l'estil nuxt
+  - Copiar fitxer configuració .eslintrc.js de nuxt-frontend a este projecte
+  - Instal·lar paquets: npm install --save-dev @nuxtjs/eslint-module @nuxtjs/eslint-config eslint-plugin-nuxt
+  - Arreglar tots els fitxers .vue aplicant eslint
+  
 # Guia 22 novembre
 
 Repàs:
