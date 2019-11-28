@@ -1,25 +1,29 @@
-<template>
-    <Page class="page">
-        <ActionBar class="action-bar">
-          <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" @tap="$navigateBack"/>
-          <ActionItem icon="res://menu"
-                        text="hamburguer_icon"
-                android:visibility="collapsed"
-                @tap="$navigateBack"
-                ios.position="left">
-          </ActionItem>
-          <Label class="action-bar-title" automationText="action_bar_label" text="Els meus canals"></Label>
-        </ActionBar>
+<template
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://schemas.android.com/apk/res/android "
+>
+  <Page class="page">
+    <ActionBar class="action-bar">
+      <NavigationButton text="Go Back" android-system-icon="ic_menu_back" @tap="$navigateBack" />
+      <ActionItem
+        icon="res://menu"
+        text="hamburguer_icon"
+        android:visibility="collapsed"
+        ios.position="left"
+        @tap="$navigateBack"
+      />
+      <Label class="action-bar-title" automation-text="action_bar_label" text="Els meus canals" />
+    </ActionBar>
 
-        <GridLayout class="page__content">
-          <ListView for="item in channels" @itemTap="onItemTap">
-            <v-template>
-              <Label :text="item.name"/>
-            </v-template>
-          </ListView>
-        </GridLayout>
-
-    </Page>
+    <GridLayout class="page__content">
+      <ListView for="item in channels" @itemTap="onItemTap">
+        <v-template>
+          <Label :text="item.name" />
+        </v-template>
+      </ListView>
+    </GridLayout>
+  </Page>
 </template>
 
 <script>

@@ -62,10 +62,11 @@ Modificacions a la app:
 
 ESLINT:
 - Configurar eslint per tal faci modificacions a l'estil nuxt
-  - Copiar fitxer configuració .eslintrc.js de nuxt-frontend a este projecte
   - Instal·lar paquets: npm install --save-dev @nuxtjs/eslint-module @nuxtjs/eslint-config eslint-plugin-nuxt
+  - Copiar fitxer configuració .eslintrc.js de nuxt-frontend a este projecte
   - Arreglar tots els fitxers .vue aplicant eslint
-  
+  - Ok a App.vue:
+    - Canviar -drawer-content per valor anterior ~drawerContent i el mateix per a ~mainContent
 # Guia 22 novembre
 
 Repàs:
