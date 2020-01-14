@@ -1,5 +1,9 @@
 # Guia 29 novembre
 
+RECORDATORI: DIMARTS TEMPS PER AVANÇAR PROJECTES
+- En paral·lel correció 1 a 1 de la feina que heu fet com ho teniu
+- MOLT IMPORTANT: grant part de la nota vindrà per aquí. Posar-se al dia TOTS
+
 - LocalStorage: https://developer.mozilla.org/es/docs/Web/API/Window/localStorage
 - Base de dades local (seguretat): només per guardar informació pública i no crítica
 - Vuex: seran les accions les encarregades de modificar tant l'estat Vuex com la base de dades local
@@ -156,7 +160,7 @@ TypeError: Cannot read property 'slice' of undefined
 - https://vuejsdevelopers.com/2018/07/02/vue-js-native-script-vue-http-web-service/
 
       
-# TROUBLESOOTING
+# TROUBLESHOOTING
 
 ## Accés a localhost desde el mòbil
 
@@ -230,6 +234,8 @@ Copiem el funcionament de mòdul auth de nuxt:
   - Estrategia típica un sol commit per modificar objecte state
   - vue.set: https://vuejs.org/v2/guide/reactivity.html
     - Permet superar la límitació de vue de ser reactiu a modificacions objectes
+    
+    v-if
      
 ## Tasques
 

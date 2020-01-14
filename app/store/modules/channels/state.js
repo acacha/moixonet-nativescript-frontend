@@ -1,6 +1,5 @@
 const state = {
-  // loggedIn: false,
-  // user: null
+  list: []
 }
 
 export default state
