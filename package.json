@@ -19,13 +19,14 @@
     "nativescript-platform-css-free": "^1.6.16",
     "nativescript-socketio": "^3.3.1",
     "nativescript-toasty": "^2.0.1",
+    "nativescript-ui-autocomplete": "^6.0.0",
     "nativescript-ui-listview": "^8.0.1",
     "nativescript-ui-sidedrawer": "~8.0.0",
     "nativescript-unit-test-runner": "^0.7.0",
     "nativescript-vue": "~2.4.0",
     "nativescript-vue-devtools": "^1.2.0",
     "rxjs": "^6.5.4",
-    "tns-core-modules": "^6.2.3",
+    "tns-core-modules": "^6.3.2",
     "vuex": "^3.1.2"
   },
   "devDependencies": {

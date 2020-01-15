@@ -10,7 +10,8 @@ import DrawerContent from './components/DrawerContent'
 import eventBus from './plugins/eventBus'
 import axios from './plugins/axios'
 
-require('nativescript-platform-css')
+// nativescript-platform-css is DEPRECATED and is not maintained!              -
+// require('nativescript-platform-css')
 
 Vue.use(RadSideDrawer)
 Vue.use(RadListView)

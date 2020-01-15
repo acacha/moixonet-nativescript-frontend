@@ -1,3 +1,7 @@
+# NOTES GENER 2020
+
+https://gist.github.com/acacha/d99dbf60e4a40253fe90f7acf1aece65
+
 # Guia 29 novembre
 
 RECORDATORI: DIMARTS TEMPS PER AVANÇAR PROJECTES
