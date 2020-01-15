@@ -16,6 +16,7 @@
     "@vue/devtools": "^5.3.3",
     "axios": "^0.19.1",
     "nativescript-floatingactionbutton": "^5.1.0",
+    "nativescript-platform-css-free": "^1.6.16",
     "nativescript-socketio": "^3.3.1",
     "nativescript-toasty": "^2.0.1",
     "nativescript-ui-listview": "^8.0.1",

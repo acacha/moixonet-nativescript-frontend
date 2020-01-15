@@ -1,5 +1,6 @@
 import Vue from 'nativescript-vue'
 import RadSideDrawer from 'nativescript-ui-sidedrawer/vue'
+import RadAutoComplete from 'nativescript-ui-autocomplete/vue'
 import VueDevtools from 'nativescript-vue-devtools'
 import RadListView from 'nativescript-ui-listview/vue'
 import store from './store'
@@ -9,8 +10,11 @@ import DrawerContent from './components/DrawerContent'
 import eventBus from './plugins/eventBus'
 import axios from './plugins/axios'
 
+require('nativescript-platform-css')
+
 Vue.use(RadSideDrawer)
 Vue.use(RadListView)
+Vue.use(RadAutoComplete)
 Vue.use(VueDevtools)
 Vue.use(eventBus)
 Vue.use(axios)
