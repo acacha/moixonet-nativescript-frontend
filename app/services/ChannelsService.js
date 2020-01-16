@@ -5,9 +5,9 @@ const STORAGE_KEY = 'moixonet-channels'
 export default class ChannelsService {
   fetch () {
     const channels = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
-    channels.forEach(function (channel, index) {
-      channel.id = index
-    })
+    // channels.forEach(function (channel, index) {
+    //   channel.id = index
+    // })
     // channelStorage.uid = channels.length
     return channels
   }
@@ -21,13 +21,13 @@ export default class ChannelsService {
   }
 
   add (channel) {
-    const channels = this.splice()
+    const channels = this.fetch()
     channels.push(channel)
     this.save(channels)
   }
 
   remove (channel) {
-    const channels = this.splice()
+    const channels = this.fetch()
     channels.splice(channels.indexOf(channel), 1)
     this.save(channels)
   }
@@ -39,6 +39,6 @@ export default class ChannelsService {
 
 // EXEMPLE US
 
-// import RestResource from './services/RestResource'
-// const restResourceService = new RestResource()
-// restResourceService.sendRequest()
+// import ChannelsService from './services/ChannelsService'
+// const channelsService = new ChannelsService()
+// channelsService.remove()

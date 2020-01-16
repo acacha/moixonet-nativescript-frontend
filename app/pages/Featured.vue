@@ -3,7 +3,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://schemas.android.com/apk/res/android "
 >
-  <Page class="page" @navigatedTo="onNavigatedTo" @loaded="greet">
+  <Page class="page" @navigatingFrom="onNavigatingFrom" @navigatingTo="onNavigatingTo" @navigatedTo="onNavigatedTo" @loaded="greet">
     <ActionBar class="action-bar">
       <!--
             Use the NavigationButton as a side-drawer button in Android
@@ -50,6 +50,9 @@ export default {
     console.log(this)
   },
   methods: {
+    onNavigationFrom (args) {
+
+    },
     prova (args) {
       console.log('args:')
       console.log(args)

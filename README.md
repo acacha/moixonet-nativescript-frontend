@@ -13,30 +13,22 @@
 - [ ] Adaptació / Responsive segons orientation o tablet/phone
   - [ ] Canviar l'ampla del boto CTA!!  
 - [ ] Exemple ús local storage (els meus canals sense usuari logat)
+- [ ] Page Events -> No utilitzar created|moutend utilitzar Page Event LOADED -> hi ha events relacionats també amb la nagevació!
+  - [ ] Injectar referències a la pàgina actual al codi VUE
 - [ ] Crear component UserChannels:
   - [ ] Arquitectura dumb/smart component (dos parts)
   - [ ] Mostra la llista de canals de l'usuari -> inicialment la llista de canals és un JSON hardcoded. Més endavant utilitzarem localStorage
   - [ ] Utilitzem RadListView per formatar la vista:
     - [ ] Cada component de la llista ha de tenir un thumb/imatge del canal i el nom del canal
     - [ ] També mostrarem data creació -> Dos files
-- [ ] Page Events -> No utilitzar created|moutend utilitzar Page Event LOADED -> hi ha events relacionats també amb la nagevació!
-  - [ ] Injectar referències a la pàgina actual al codi VUE
 - [ ] Altres per practicar estils
-  - [ ] Buscar icona per channels i aplciar al codi 
+  - [ ] Buscar icona per channels i aplicar al codi 
   - [ ] Crear pàgina de login (similar exemple app demo temes)
   - [ ] Crear un apartat config on l'usuari pugui canviar a Dark Mode (utilitzant un switch): https://www.nativescript.org/blog/an-early-look-at-the-new-nativescript-core-theme
   
-# TODO
-
-- Llegir https://fluentreports.com/blog/?p=1076
-  - Com queda screen-orientation i plaftorm-css?
-
-```
-Their are a couple changes in Core modules that are worth noting. First of all; for those who have used my awesome nativescript-platform-css plugin for years; the NativeScript team finally decided I was right! 😀 They have not only stolen, er, borrowed, the idea to put device type in the class name (ns-android & ns-ios) , but they also borrowed the same idea I did in my nativescript-orientation plugin, which is put the orientation (ns-landscape & ns-portrait) into the class also. Unfortunately, I am a bit sad they still didn't have the foresight to borrow my poor-mans-media query system; it is still way better than nothing. Nor did they decide to use the device name css system, or any of the additional classes like .notch. So if you still need media query or actual device name support or anything else the platform-css; then you can continue to use the ns-platform-css plugin. And the ns-orientation plugin still offers the ability to force rotation and/or lock the rotation to a certain direction, so neither plugin will be discontinued because of the additional functionality both plugins still offer that the team didn't borrow.
-In addition another community PR was accepted to add CSS calculation support! Unfortunately do to a minor oversight, it is broken in 6.10, but I would guess it should be fully fixed in 6.11.
-```
-
 # COMPONENTS
+
+Exemple ús args -> https://github.com/NativeScript/theme/blob/master/app/pages/themes.js mètode applyTheme
 
 Tots són hereus d'una classe comuna anomenda **View** i tenen tots mètodes comuns.
 - getViewById: posant un id a la vista es pot accedir a ella via aquet mètode
@@ -132,7 +124,10 @@ Per canviar skins:
 import themes from "nativescript-themes";
 ``` 
 
-I utilitzar applyThemeCss
+I utilitzar applyThemeCss. Vegeu:
+
+- https://github.com/NativeScript/theme/blob/master/app/pages/themes.xml
+- https://github.com/NativeScript/theme/blob/master/app/pages/themes.js
 
 # APLICAR ESTILS PER COMPONENTS
 

@@ -14,7 +14,7 @@
         ios.position="left"
         @tap="$navigateBack"
       />
-      <SearchBar hint="Search hint" :text="channel" @textChange="onTextChanged" @returnPress="onReturnPress" @submit="onSubmit" />
+<!--      <SearchBar hint="Search hint" :text="channel" @textChange="onTextChanged" @returnPress="onReturnPress" @submit="onSubmit" />-->
 
       <!--      <TextField-->
 <!--        v-model="channel"-->

@@ -1,10 +1,10 @@
 <template>
-  <app-user-channels :channels="channels" @leave="leave" @selected="selected"/>
+  <app-user-channels :channels="channels" @leave="leave" @selected="selected" />
 </template>
 
 <script>
-import AppUserChannels from './AppUserChannels'
 import publishedChannelsData from '../data/publishedChannels.json'
+import AppUserChannels from './AppUserChannels'
 
 export default {
   name: 'PublishedChannels',
