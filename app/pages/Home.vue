@@ -34,9 +34,31 @@
     </ActionBar>
 
     <GridLayout class="page__content">
-      <Label class="page__content-icon fas" text.decode="&#xf015;" />
-      <Label class="page__content-placeholder" :text="message" />
-      <Button automation-text="new_channel_button" text="Nou canal" @tap="newChannel" />
+      <template v-if="channels.length > 0">
+        <user-channels :channels="channels"/>
+        <Button class="page__content-cta c-bg-ruby" automation-text="new_channel_button" text="Eliminar tots els canals " @tap="removeAll" />
+      </template>
+      <template v-else>
+        <Label class="page__content-icon fas" text.decode="&#xf2bb;" />
+        <Label class="page__content-placeholder" :text="message" />
+        <Button class="page__content-cta -primary" automation-text="new_channel_button" text="Nou canal" @tap="newChannel" />
+        <Button text="Nou canal sample" @tap="newSampleChannel" />
+      </template>
+
+      <!--      <Button class="page__content-cta -primary" automation-text="new_channel_button" @tap="newChannel">-->
+      <!--        <FormattedString>-->
+      <!--          <Label text.decode="&#xf2bb;" class="fas nt-icon"/>-->
+      <!--          <Span text="Afegir canal" />-->
+      <!--        </FormattedString>-->
+      <!--      </Button>-->
+
+      <!--      <Button class="-primary">-->
+      <!--        <FormattedString>-->
+      <!--          <Span text="fa-twitter | fonticon" class="fa nt-icon"/>-->
+      <!--          <Span text="PROVA"/>-->
+      <!--        </FormattedString>-->
+      <!--      </Button>-->
+      <!--      <Label class="page__content-icon fas" text.decode="&#xf2bb;"></Label>-->
       <Fab
         row="1"
         icon="res://baseline_add_white_24"
@@ -50,13 +72,23 @@
 
 <script>
 import SelectedPageService from '../shared/selected-page-service'
+import UserChannels from '../components/UserChannels'
+import channelsData from '../data/channels.json'
 import NewChannel from './NewChannel'
 import * as utils from '~/shared/utils'
 
 export default {
+  components: {
+    'user-channels': UserChannels
+  },
+  data () {
+    return {
+      channels: channelsData
+    }
+  },
   computed: {
     message () {
-      return 'Encara no us heu subscrit a cap canal!'
+      return 'No esteu subscrit a cap canal'
     }
   },
   mounted () {
@@ -68,6 +100,18 @@ export default {
     },
     newChannel () {
       this.$navigateTo(NewChannel)
+    },
+    newSampleChannel () {
+      console.log('newSampleChannel!!!!!!!!!!!')
+      this.channels.push({
+        id: 1,
+        name: 'Canal exemple',
+        created_at: 'Fa 1 segon'
+      })
+    },
+    removeAll () {
+      // TODO CONFIRM
+      this.channels = []
     }
   }
 }

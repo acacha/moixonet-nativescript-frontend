@@ -35,9 +35,94 @@
         vertical-align: top;
         margin-top: 20%;
     }
+
+    &-cta {
+      margin-top: 30%;
+      width: 300;
+      border-radius: 10;
+    }
+
+  .ns-tablet &-cta {
+    font-size: 40;
+    width: 500;
+  }
+
+  .ns-tablet &cta {
+    font-size: 40;
+  }
+
+  .ns-landscape.ns-phone &-cta {
+    visibility: collapsed;
+  }
+
+  .ns-landscape.ns-phone &-placeholder {
+    margin-top: 30%;
+  }
+
+  //.ns-mobile &-cta{
+  //  //font-size: 140;
+  //}
+
+  .ns-tablet &-cta{
+    font-size: 20;
+    height: 75;
+  }
+
+  //.ns-landscape &-cta {
+  //  //background-color: olive;
+  //}
+  //
+  //.ns-portrait &-cta {
+  //  //background-color: aqua;
+  //}
 }
 
 // Drawer navigation custom styles
 .nt-drawer__header-image {
     color: const(grey);
 }
+
+// NOT WORKING
+//.ns-portrait > Page {
+//  background-color: orange;
+//}
+//
+//.ns-landscape > Page {
+//  background-color: yellow;
+//}
+
+// Exemple customització Page amb responsive
+Page {
+  //background-color: orange;
+  .ns-landscape & {
+    //background-color: blue;
+  }
+  .ns-phone & {
+    //background-color: olive;
+  }
+  .ns-tablet & {
+    //background-color: aqua;
+  }
+}
+
+// Exemple customització Button
+//Button {
+//  background-color: const(forest);
+//  height: const(btn-height);
+//  .ns-landscape & {
+//    //background-color: olive;
+//  }
+//  .ns-portrait & {
+//    background-color: white;
+//  }
+//}
+
+//.ns-landscape > Button {
+//  background-color: yellow;
+//  height: const(btn-height);
+//}
+
+//.ns-tablet > Button {
+//  background-color: const(forest);
+//  height: const(btn-height);
+//}

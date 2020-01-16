@@ -3,12 +3,22 @@ import RadSideDrawer from 'nativescript-ui-sidedrawer/vue'
 import RadAutoComplete from 'nativescript-ui-autocomplete/vue'
 import VueDevtools from 'nativescript-vue-devtools'
 import RadListView from 'nativescript-ui-listview/vue'
+import { TNSFontIcon, fonticon } from 'nativescript-fonticon'
 import store from './store'
 import App from './components/App'
 import Home from './pages/Home'
 import DrawerContent from './components/DrawerContent'
 import eventBus from './plugins/eventBus'
 import axios from './plugins/axios'
+
+TNSFontIcon.debug = true
+TNSFontIcon.paths = {
+  fa: './font-awesome.css',
+  ion: './ionicons.css'
+}
+TNSFontIcon.loadCss()
+
+Vue.filter('fonticon', fonticon)
 
 // nativescript-platform-css is DEPRECATED and is not maintained!              -
 // require('nativescript-platform-css')

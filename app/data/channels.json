@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Canal 1",
+    "created_at": "fa 2 minuts"
+  },
+  {
+    "id": 2,
+    "name": "Canal 2",
+    "created_at": "fa 4 hores"
+  },
+  {
+    "id": 3,
+    "name": "Canal 3",
+    "created_at": "fa 6 dies"
+  }
+]
