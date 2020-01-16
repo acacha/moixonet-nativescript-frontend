@@ -1,9 +1,64 @@
+# TASQUES DIJOUS 16 GENER 2020
+
+- [ ] Canviar nom aplicació. Vegeu apartat a sota
+- [ ] Provar canvis Android Properties (per exemple orientació app) utilitzant Sidekick
+- [ ] Fitxer Manifest Android **app/App_Resources/Android/src/main/AndroidManifest.xml**: 
+
+# CANVIAR NOM APLICACIÓ
+
+Creeu el fitxer **App_Resources/Android/src/main/res/values/strings.xml**:
+
+I poseu:
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Moixonet</string>
+  <string name="title_activity_kimera">Moixonet</string>
+</resources>
+```
+
+Com podeu veure els Strings (per tema de localització/multiples idiomes) es consideren recursos configurables (Prefix @string/). 
+
+Aquest valors que canvieu ara estan a fitxer Manifest **app/App_Resources/Android/src/main/AndroidManifest.xml**:
+
+``` 
+<application
+		android:name="com.tns.NativeScriptApplication"
+		android:allowBackup="true"
+		android:icon="@drawable/icon"
+		android:label="@string/app_name"
+		android:theme="@style/AppTheme">
+
+		<activity
+			android:name="com.tns.NativeScriptActivity"
+			android:label="@string/title_activity_kimera"
+``` 
+
+Per aplicar canvis esborreu **rm -rf platforms/android** i torneu a executar aplicació. 
+			
+Docs:
+- https://docs.nativescript.org/tooling/publishing/publishing-android-apps#app-name
+
 # ORIENTATION
 
 ## FORCE ORIENTATION
 
 Tota l'aplicació:
-- Canviant el manifest Android de l'aplicació
+- Canviant el manifest Android de l'aplicació es pot escollir la orientació
+- Manifest: **app/App_Resources/Android/src/main/AndroidManifest.xml**
+  - android:configChanges: keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|locale|uiMode
+    - Evita restarts de l'activitat (repintat) quan canvia algna de les configuracions
+    - Nativescript utilitza: onconfigurationchanged
+  - https://developer.android.com/guide/topics/resources/runtime-changes
+- Orientacions possibles: https://developer.android.com/guide/topics/manifest/activity-element.html#screen
+
+# PROPERTIES
+
+## ANDROID
+
+- Es poden modificar a Sidekick a l'apartat properties.
+- Docs: https://docs.nativescript.org/sidekick/user-guide/configure-app/android-properties
 
 # NOTES GENER 2020
 
