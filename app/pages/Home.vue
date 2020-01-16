@@ -35,14 +35,17 @@
 
     <GridLayout class="page__content">
       <template v-if="channels.length > 0">
-        <user-channels :channels="channels"/>
+        <user-channels :channels="channels" />
         <Button class="page__content-cta c-bg-ruby" automation-text="new_channel_button" text="Eliminar tots els canals " @tap="removeAll" />
       </template>
       <template v-else>
         <Label class="page__content-icon fas" text.decode="&#xf2bb;" />
         <Label class="page__content-placeholder" :text="message" />
         <Button class="page__content-cta -primary" automation-text="new_channel_button" text="Nou canal" @tap="newChannel" />
-        <Button text="Nou canal sample" @tap="newSampleChannel" />
+        <GridLayout rows="auto" columns="*, *">
+          <Button text="Nou canal sample" @tap="newSampleChannel" />
+          <Button col="2" text="Omplir amb canals exemple" @tap="newSampleChannels" />
+        </GridLayout>
       </template>
 
       <!--      <Button class="page__content-cta -primary" automation-text="new_channel_button" @tap="newChannel">-->
@@ -102,12 +105,15 @@ export default {
       this.$navigateTo(NewChannel)
     },
     newSampleChannel () {
-      console.log('newSampleChannel!!!!!!!!!!!')
       this.channels.push({
         id: 1,
         name: 'Canal exemple',
         created_at: 'Fa 1 segon'
       })
+    },
+    newSampleChannels () {
+      console.log('newSamplesChannel!!!!!!!!!')
+      this.channels = channelsData
     },
     removeAll () {
       // TODO CONFIRM

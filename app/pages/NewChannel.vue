@@ -14,101 +14,74 @@
         ios.position="left"
         @tap="$navigateBack"
       />
-      <TextField
-        v-model="channel"
-        hint="Canal..."
-        @textChange="onTextChange"
-        @focus="onFocus"
-        @blur="onBlur"
-        @returnPress="onReturnPress"
-      />
+      <SearchBar hint="Search hint" :text="channel" @textChange="onTextChanged" @returnPress="onReturnPress" @submit="onSubmit" />
+
+      <!--      <TextField-->
+<!--        v-model="channel"-->
+<!--        hint="Canal..."-->
+<!--        @textChange="onTextChange"-->
+<!--        @focus="onFocus"-->
+<!--        @blur="onBlur"-->
+<!--        @returnPress="onReturnPress"-->
+<!--      />-->
     </ActionBar>
 
     <GridLayout class="page__content">
-      {{ channels.length }}
-      <Label v-if="channels.length === 0" class="page__content-placeholder" :text="message" />
-      <RadListView
-        v-else
-        ref="listView"
-        :pull-to-refresh="true"
-        for="channel in channels"
-        @itemTap="onItemTap"
-        @pullToRefreshInitiated="onPullToRefreshInitiated"
-      >
-        <v-template>
-          <StackLayout class="item" orientation="vertical">
-            <Label :text="channel.name" class="nameLabel" />
-          </StackLayout>
-        </v-template>
-      </RadListView>
+      <SearchBar hint="Search hint" :text="channel" @textChange="onTextChanged" @returnPress="onReturnPress" @submit="onSubmit" />
+      <published-channels/>
       <!--            TODO PUBLISHED CHANNELS LIST AND FILTERED-->
     </GridLayout>
   </Page>
 </template>
 
 <script>
-
+import PublishedChannels from '../components/PublishedChannels'
 export default {
   name: 'NewChannel',
+  components: {
+    'published-channels': PublishedChannels
+  },
   data () {
     return {
-      channel: '',
-      channels: [
-        {
-          id: 1,
-          name: 'Canal 1'
-        },
-        {
-          id: 2,
-          name: 'Canal 2'
-        },
-        {
-          id: 3,
-          name: 'Canal 3'
-        },
-        {
-          id: 4,
-          name: 'Canal 4'
-        }
-      ]
+      channel: ''
     }
   },
   computed: {
-    channelsCount () {
-      return this.channels.length
-    },
     message () {
       return "No s'ha trobat cap canal!"
     }
   },
   methods: {
-    onPullToRefreshInitiated ({ object }) {
-      console.log('REFRESHING!!!!!!!!...')
-      // in order to avoid race conditions (only on iOS),
-      // in which the UI may not be completely updated here
-      // we use this.$nextTick call
-      setTimeout(function () {
-        this.$nextTick(() => {
-          this.channels.push({
-            id: 99,
-            name: 'Berry'
-          })
-          object.notifyPullToRefreshFinished()
-        })
-      }, 2000)
+    // onPullToRefreshInitiated ({ object }) {
+    //   console.log('REFRESHING!!!!!!!!...')
+    //   // in order to avoid race conditions (only on iOS),
+    //   // in which the UI may not be completely updated here
+    //   // we use this.$nextTick call
+    //   setTimeout(function () {
+    //     this.$nextTick(() => {
+    //       this.channels.push({
+    //         id: 99,
+    //         name: 'Berry'
+    //       })
+    //       object.notifyPullToRefreshFinished()
+    //     })
+    //   }, 2000)
+    // },
+    // onItemTap ({ item }) {
+    //   console.log('onItemTap')
+    //   console.log(item)
+    //   console.log(`Tapped on ${item.name}`)
+    // },
+    // onFocus () {
+    //   console.log('FOCUS!')
+    // },
+    // onBlur () {
+    //   console.log('BLUR!')
+    // },
+    onSubmit () {
+      console.log('ON SUBMIT!')
     },
-    onItemTap ({ item }) {
-      console.log('onItemTap')
-      console.log(item)
-      console.log(`Tapped on ${item.name}`)
-    },
-    onFocus () {
-      console.log('FOCUS!')
-    },
-    onBlur () {
-      console.log('BLUR!')
-    },
-    onTextChange () {
+    onTextChanged () {
       console.log('TEXT CHANGED!')
     },
     onReturnPress () {

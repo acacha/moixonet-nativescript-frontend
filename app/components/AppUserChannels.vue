@@ -15,6 +15,7 @@
             <Label :text="channel.name" class="list-group-item-heading" />
             <Label :text="'Subscrit des de ' + channel.created_at" text-wrap="true" class="list-group-item-text" />
           </StackLayout>
+<!--          // TODO -> BUTTON ACTION CAN BE MODIFIED USING SLOT. Per exemple subscriure en comptes de sortir del canal-->
           <Button col="2" text="Sortir" @tap="$emit('leave')" />
         </GridLayout>
       </v-template>
