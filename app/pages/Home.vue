@@ -39,9 +39,21 @@
         <Button class="page__content-cta c-bg-ruby" automation-text="new_channel_button" text="Eliminar tots els canals " @tap="removeAll" />
       </template>
       <template v-else>
-        <Label class="page__content-icon fas" text.decode="&#xf2bb;" />
+        <Label class="page__content-icon fas" text.decode="&#xf0c9;" />
         <Label class="page__content-placeholder" :text="message" />
         <Button class="page__content-cta -primary" automation-text="new_channel_button" text="Nou canal" @tap="newChannel" />
+
+
+
+
+
+
+
+
+
+
+
+
         <GridLayout rows="auto" columns="*, *">
           <Button text="Nou canal sample" @tap="newSampleChannel" />
           <Button col="2" text="Omplir amb canals exemple" @tap="newSampleChannels" />

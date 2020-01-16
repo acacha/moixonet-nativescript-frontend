@@ -1,13 +1,5 @@
 # TASQUES DIJOUS 16 GENER 2020
 
-- [ ] Crear component UserChannels:
-  - [ ] Arquitectura dumb/smart component (dos parts)
-  - [ ] Mostra la llista de canals de l'usuari -> inicialment la llista de canals és un JSON hardcoded. Més endavant utilitzarem localStorage
-  - [ ] Utilitzem RadListView per formatar la vista:
-    - [ ] Cada component de la llista ha de tenir un thumb/imatge del canal i el nom del canal
-    - [ ] També mostrarem data creació -> Dos files
-- [ ] Page Events -> No utilitzar created|moutend utilitzar Page Event LOADED -> hi ha events relacionats també amb la nagevació!
-  - [ ] Injectar referències a la pàgina actual al codi VUE
 - [ ] Portar una tablet si teniu. Si no teniu crear un dispositiu virtual extra que sigui una tablet per fer proves en tablet
 - [ ] Canviar nom aplicació. Vegeu apartat a sota
 - [ ] Provar canvis Android Properties (per exemple orientació app) utilitzant Sidekick
@@ -21,6 +13,14 @@
 - [ ] Adaptació / Responsive segons orientation o tablet/phone
   - [ ] Canviar l'ampla del boto CTA!!  
 - [ ] Exemple ús local storage (els meus canals sense usuari logat)
+- [ ] Crear component UserChannels:
+  - [ ] Arquitectura dumb/smart component (dos parts)
+  - [ ] Mostra la llista de canals de l'usuari -> inicialment la llista de canals és un JSON hardcoded. Més endavant utilitzarem localStorage
+  - [ ] Utilitzem RadListView per formatar la vista:
+    - [ ] Cada component de la llista ha de tenir un thumb/imatge del canal i el nom del canal
+    - [ ] També mostrarem data creació -> Dos files
+- [ ] Page Events -> No utilitzar created|moutend utilitzar Page Event LOADED -> hi ha events relacionats també amb la nagevació!
+  - [ ] Injectar referències a la pàgina actual al codi VUE
 - [ ] Altres per practicar estils
   - [ ] Buscar icona per channels i aplciar al codi 
   - [ ] Crear pàgina de login (similar exemple app demo temes)
@@ -125,6 +125,14 @@ import Theme from "nativescript-theme-core";
 
 Theme.setMode(Theme.Dark); // Or Theme.Light
 ```
+
+Per canviar skins:
+
+```
+import themes from "nativescript-themes";
+``` 
+
+I utilitzar applyThemeCss
 
 # APLICAR ESTILS PER COMPONENTS
 
