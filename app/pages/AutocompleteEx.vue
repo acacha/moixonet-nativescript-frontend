@@ -6,7 +6,7 @@
             Use the NavigationButton as a side-drawer button in Android
             because ActionItems are shown on the right side of the ActionBar
             -->
-      <NavigationButton ios:visibility="collapsed" icon="res://menu" @tap="onDrawerButtonTap" />
+      <NavigationButton ios:visibility="collapsed" icon="res://menu" @tap="showDrawer" />
       <!--
             Use the ActionItem for IOS with position set to left. Using the
             NavigationButton as a side-drawer button in iOS is not possible,
@@ -16,7 +16,7 @@
         icon="res://menu"
         android:visibility="collapsed"
         ios.position="left"
-        @tap="onDrawerButtonTap"
+        @tap="showDrawer"
       />
       <Label class="action-bar-title" text="Browse" />
     </ActionBar>
@@ -31,19 +31,19 @@
       />
       <Label text="SUGGEST MODES" margin-top="5" />
       <StackLayout orientation="horizontal">
-        <Button margin="5" text="Suggest" @tap="onSuggestSelected()" />
-        <Button margin="5" text="Append" @tap="onAppendSelected()" />
-        <Button margin="5" text="Suggest-Append" @tap="onSuggestAppendSelected()" />
+        <Button margin="5" text="Suggest" @tap="onSuggestSelected" />
+        <Button margin="5" text="Append" @tap="onAppendSelected" />
+        <Button margin="5" text="Suggest-Append" @tap="onSuggestAppendSelected" />
       </StackLayout>
       <Label text="COMPLETION MODES" />
       <StackLayout orientation="horizontal">
-        <Button margin="5" text="StartsWith" @tap="onStartsWithSelected()" />
-        <Button margin="5" text="Contains" @tap="onContainsSelected()" />
+        <Button margin="5" text="StartsWith" @tap="onStartsWithSelected" />
+        <Button margin="5" text="Contains" @tap="onContainsSelected" />
       </StackLayout>
       <Label text="DISPLAY MODES" />
       <StackLayout orientation="horizontal">
-        <Button margin="5" text="Plain" @tap="onPlainSelected()" />
-        <Button margin="5" text="Tokens" @tap="onTokensSelected()" />
+        <Button margin="5" text="Plain" @tap="onPlainSelected" />
+        <Button margin="5" text="Tokens" @tap="onTokensSelected" />
       </StackLayout>
     </StackLayout>
   </Page>
@@ -71,44 +71,51 @@ export default {
       dataItems,
       displayMode: AutoCompleteDisplayMode.Tokens,
       suggestMode: AutoCompleteSuggestMode.Suggest,
-      completionMode: AutoCompleteCompletionMode.StartsWith
+      completionMode: AutoCompleteCompletionMode.Contains
     }
   },
   methods: {
-    onDrawerButtonTap () {
+    showDrawer () {
       utils.showDrawer()
     },
-    onNavigationButtonTap () {
-      Frame.topmost().goBack()
-    },
+    // onNavigationButtonTap () {
+    //   Frame.topmost().goBack()
+    // },
     onSuggestSelected (args) {
+      console.log('onSuggestSelected!')
       this.suggestMode = AutoCompleteSuggestMode.Suggest
       this.$refs.autocomplete.resetAutoComplete()
     },
     onAppendSelected (args) {
+      console.log('onAppendSelected!')
       this.suggestMode = AutoCompleteSuggestMode.Append
       this.completionMode = AutoCompleteCompletionMode.StartsWith
       this.$refs.autocomplete.resetAutoComplete()
     },
     onSuggestAppendSelected (args) {
+      console.log('onSuggestAppendSelected')
       this.suggestMode = AutoCompleteSuggestMode.SuggestAppend
       this.completionMode = AutoCompleteCompletionMode.StartsWith
       this.$refs.autocomplete.resetAutoComplete()
     },
     onStartsWithSelected (args) {
+      console.log('onStartsWithSelected')
       this.completionMode = AutoCompleteCompletionMode.StartsWith
       this.$refs.autocomplete.resetAutoComplete()
     },
     onContainsSelected (args) {
+      console.log('onContainsSelected')
       this.completionMode = AutoCompleteCompletionMode.Contains
       this.suggestMode = AutoCompleteSuggestMode.Suggest
       this.$refs.autocomplete.resetAutoComplete()
     },
     onPlainSelected (args) {
+      console.log('onPlainSelected')
       this.displayMode = AutoCompleteDisplayMode.Plain
       this.$refs.autocomplete.resetAutoComplete()
     },
     onTokensSelected (args) {
+      console.log('onTokensSelected')
       this.displayMode = AutoCompleteDisplayMode.Tokens
       this.$refs.autocomplete.resetAutoComplete()
     }

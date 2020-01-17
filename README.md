@@ -32,6 +32,26 @@
   - [ ] Crear pàgina de login (similar exemple app demo temes)
   - [ ] Crear un apartat config on l'usuari pugui canviar a Dark Mode (utilitzant un switch): https://www.nativescript.org/blog/an-early-look-at-the-new-nativescript-core-theme
 
+# Autocomplete RadAutocompleteTextView
+
+Per veure com funciona baixeu/cloneu i executeu:
+
+  /home/YOUR_HOME/Code/Nativescript/nativescript-ui-samples/autocomplete
+
+Opcions:
+- **Suggest modes**:
+ - **drop-down list*: 
+ - **one suggestion at a time in the text input**
+ - **combination of both**
+StartsWith and Contains completion modes;
+- **Display modes**: 
+  - **Plain** only one item can be selected
+  - **Tokens** multiple selection of suggestions (each displayed as a token/tag);
+- **Token Layout modes**: Wrap and Horizontal
+
+Docs:
+- https://docs.nativescript.org/ui/overview?&_ga=2.228778524.1005248413.1579012035-1514962011.1567253259#radautocompletetextview
+
 # GESTIÓ MÀQUINES VIRTUALS
 
 ## MÀQUINA VIRTUAL TABLET
@@ -809,6 +829,14 @@ emulator -avd Emulator-Api29-Google
 # VUE DEV TOOLS
 
 https://nativescript-vue.org/en/docs/getting-started/vue-devtools/
+
+Un cop instal·lat només cal:
+
+```
+vue-devtools 
+rm -rf platforms
+tns run android
+``
 
 # APPIUM DESKTOP
 
