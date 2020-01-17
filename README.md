@@ -1,5 +1,11 @@
+# TASQUES DIVENDRES 17 GENER 2020
+
+- [ ] Recursos extres
+  - [ ] ic_menu_back? 
+
 # TASQUES DIJOUS 16 GENER 2020
 
+- [ ] CONFIRM DIALOG a la operació desubscriure's del canal -> https://nativescript-vue.org/en/docs/elements/dialogs/confirm/
 - [ ] Portar una tablet si teniu. Si no teniu crear un dispositiu virtual extra que sigui una tablet per fer proves en tablet
 - [ ] Canviar nom aplicació. Vegeu apartat a sota
 - [ ] Provar canvis Android Properties (per exemple orientació app) utilitzant Sidekick
@@ -25,6 +31,12 @@
   - [ ] Buscar icona per channels i aplicar al codi 
   - [ ] Crear pàgina de login (similar exemple app demo temes)
   - [ ] Crear un apartat config on l'usuari pugui canviar a Dark Mode (utilitzant un switch): https://www.nativescript.org/blog/an-early-look-at-the-new-nativescript-core-theme
+
+# GESTIÓ MÀQUINES VIRTUALS
+
+## MÀQUINA VIRTUAL TABLET
+
+Instal·leu Android Studio i executeu Android Device Manager. Feu la instal·lació amb Custom per tal de poder escollir el Android SDK que ja tenim.
   
 # COMPONENTS
 

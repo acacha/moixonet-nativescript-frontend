@@ -43,6 +43,13 @@
 
         <StackLayout class="hr" />
 
+        <GridLayout automation-text="nav_link_featured" columns="auto, *" :class="'nt-drawer__list-item' + (selectedPage === 'AutocompleteEx' ? ' -selected': '')" @tap="onNavigationItemTap(AutocompleteEx)">
+          <Label col="0" text.decode="&#xf005;" class="nt-icon fas" />
+          <Label col="1" text="AutocompleteEx" class="p-r-10" />
+        </GridLayout>
+
+        <StackLayout class="hr" />
+
         <GridLayout automation-text="nav_link_settings" columns="auto, *" :class="'nt-drawer__list-item' + (selectedPage === 'Settings' ? ' -selected': '')" @tap="onNavigationItemTap(Settings)">
           <Label col="0" text.decode="&#xf013;" class="nt-icon fas" />
           <Label col="1" text="Settings" class="p-r-10" />
@@ -63,6 +70,7 @@ import Search from '../pages/Search'
 import Settings from '../pages/Settings'
 import ChannelsList from '../pages/ChannelsList'
 import Channel from '../pages/Channel'
+import AutocompleteEx from '../pages/AutocompleteEx'
 import * as utils from '~/shared/utils'
 import SelectedPageService from '~/shared/selected-page-service'
 import url from '@/utils/url'
@@ -84,6 +92,7 @@ export default {
       Settings,
       ChannelsList,
       Channel,
+      AutocompleteEx,
       selectedPage: ''
     }
   },
