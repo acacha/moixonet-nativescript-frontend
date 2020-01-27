@@ -11,46 +11,91 @@
     </StackLayout>
     <ScrollView row="1" class="nt-drawer__body">
       <StackLayout>
-        <GridLayout automation-text="nav_link_home" columns="auto, *" :class="'nt-drawer__list-item' + (selectedPage === 'Home' ? ' -selected': '')" @tap="onNavigationItemTap(Home)">
+        <GridLayout
+          automation-text="nav_link_home"
+          columns="auto, *"
+          :class="'nt-drawer__list-item' + (selectedPage === 'Home' ? ' -selected': '')"
+          @tap="onNavigationItemTap(Home)"
+        >
           <Label col="0" text.decode="&#xf015;" class="nt-icon fas" />
           <Label col="1" text="Home" class="p-r-10" />
         </GridLayout>
 
-        <GridLayout automation-text="nav_link_browse" columns="auto, *" :class="'nt-drawer__list-item' + (selectedPage === 'Browse' ? ' -selected': '')" @tap="onNavigationItemTap(Browse)">
+        <GridLayout
+          automation-text="nav_link_browse"
+          columns="auto, *"
+          :class="'nt-drawer__list-item' + (selectedPage === 'Browse' ? ' -selected': '')"
+          @tap="onNavigationItemTap(Browse)"
+        >
           <Label col="0" text.decode="&#xf1ea;" class="nt-icon far" />
           <Label col="1" text="Browse" class="p-r-10" />
         </GridLayout>
 
-        <GridLayout automation-text="nav_link_search" columns="auto, *" :class="'nt-drawer__list-item' + (selectedPage === 'Search' ? ' -selected': '')" @tap="onNavigationItemTap(Search)">
+        <GridLayout
+          automation-text="nav_link_search"
+          columns="auto, *"
+          :class="'nt-drawer__list-item' + (selectedPage === 'Search' ? ' -selected': '')"
+          @tap="onNavigationItemTap(Search)"
+        >
           <Label col="0" text.decode="&#xf002;" class="nt-icon fas" />
           <Label col="1" text="Search" class="p-r-10" />
         </GridLayout>
 
-        <GridLayout automation-text="nav_link_featured" columns="auto, *" :class="'nt-drawer__list-item' + (selectedPage === 'Featured' ? ' -selected': '')" @tap="onNavigationItemTap(Featured)">
+        <GridLayout
+          automation-text="nav_link_featured"
+          columns="auto, *"
+          :class="'nt-drawer__list-item' + (selectedPage === 'Featured' ? ' -selected': '')"
+          @tap="onNavigationItemTap(Featured)"
+        >
           <Label col="0" text.decode="&#xf005;" class="nt-icon fas" />
           <Label col="1" text="Featured" class="p-r-10" />
         </GridLayout>
 
-        <GridLayout automation-text="nav_link_featured" columns="auto, *" :class="'nt-drawer__list-item' + (selectedPage === 'Featured' ? ' -selected': '')" @tap="onNavigationItemTap(ChannelsList)">
+        <GridLayout automation-text="nav_link_featured" columns="auto, *" :class="'nt-drawer__list-item' + (selectedPage === 'ChannelsList' ? ' -selected': '')" @tap="onNavigationItemTap(ChannelsList)">
           <Label col="0" text.decode="&#xf005;" class="nt-icon fas" />
           <Label col="1" text="Channels" class="p-r-10" />
         </GridLayout>
 
-        <GridLayout automation-text="nav_link_featured" columns="auto, *" :class="'nt-drawer__list-item' + (selectedPage === 'Featured' ? ' -selected': '')" @tap="onNavigationItemTap(Channel)">
+        <GridLayout
+          automation-text="nav_link_channel"
+          columns="auto, *"
+          :class="'nt-drawer__list-item' + (selectedPage === 'Channel' ? ' -selected': '')"
+          @tap="onNavigationItemTap(Channel)"
+        >
           <Label col="0" text.decode="&#xf005;" class="nt-icon fas" />
           <Label col="1" text="Channel" class="p-r-10" />
         </GridLayout>
 
+        <GridLayout
+          automation-text="nav_link_channel_details"
+          columns="auto, *"
+          :class="'nt-drawer__list-item' + (selectedPage === 'ChannelDetails' ? ' -selected': '')"
+          @tap="onNavigationItemTap(ChannelDetails)"
+        >
+          <Label col="0" text.decode="&#xf005;" class="nt-icon fas" />
+          <Label col="1" text="Channel DETAILS" class="p-r-10" />
+        </GridLayout>
+
         <StackLayout class="hr" />
 
-        <GridLayout automation-text="nav_link_featured" columns="auto, *" :class="'nt-drawer__list-item' + (selectedPage === 'AutocompleteEx' ? ' -selected': '')" @tap="onNavigationItemTap(AutocompleteEx)">
+        <GridLayout
+          automation-text="nav_link_autocomplete_ex"
+          columns="auto, *"
+          :class="'nt-drawer__list-item' + (selectedPage === 'AutocompleteEx' ? ' -selected': '')"
+          @tap="onNavigationItemTap(AutocompleteEx)"
+        >
           <Label col="0" text.decode="&#xf005;" class="nt-icon fas" />
           <Label col="1" text="AutocompleteEx" class="p-r-10" />
         </GridLayout>
 
         <StackLayout class="hr" />
 
-        <GridLayout automation-text="nav_link_settings" columns="auto, *" :class="'nt-drawer__list-item' + (selectedPage === 'Settings' ? ' -selected': '')" @tap="onNavigationItemTap(Settings)">
+        <GridLayout
+          automation-text="nav_link_settings"
+          columns="auto, *"
+          :class="'nt-drawer__list-item' + (selectedPage === 'Settings' ? ' -selected': '')"
+          @tap="onNavigationItemTap(Settings)"
+        >
           <Label col="0" text.decode="&#xf013;" class="nt-icon fas" />
           <Label col="1" text="Settings" class="p-r-10" />
         </GridLayout>
@@ -69,6 +114,7 @@ import Featured from '../pages/Featured'
 import Search from '../pages/Search'
 import Settings from '../pages/Settings'
 import ChannelsList from '../pages/ChannelsList'
+import ChannelDetails from '../pages/ChannelDetails'
 import Channel from '../pages/Channel'
 import AutocompleteEx from '../pages/AutocompleteEx'
 import * as utils from '~/shared/utils'
@@ -81,7 +127,8 @@ export default {
     Browse,
     Featured,
     Search,
-    Settings
+    Settings,
+    ChannelDetails
   },
   data () {
     return {
@@ -93,6 +140,7 @@ export default {
       ChannelsList,
       Channel,
       AutocompleteEx,
+      ChannelDetails,
       selectedPage: ''
     }
   },
@@ -104,7 +152,7 @@ export default {
     // console.log(this.$store)
     console.log(this.$store.state.auth.loggedIn)
     console.log('LoggedIn:')
-    console.log(this.$store.getters.loggedIn)
+    console.log(this.$store.getters['auth/loggedIn'])
     SelectedPageService.getInstance().selectedPage$
       .subscribe((selectedPage) => { this.selectedPage = selectedPage })
   },

@@ -15,6 +15,7 @@ Comprovació Tasques ja haurien estar fetes:
     - [ ] Menú mostra dialeg per fer el login: el login sempre funciona correctament
       - [ ] Mostra link a registre -> Directement al backend
     - [ ] O es mostra un o es mostra l'altre segons estem logats o no
+
 TODO: 
 
 - [ ] Llegir/Explicar apartat NOTES SOBRE EMULADORS I EXECUCIÓ
@@ -27,10 +28,10 @@ TODO:
   Vue.set(state, payload.key, payload.value)
 }
 - [ ] Explicar funció set i pq cal? Limitations identificació de canvis en objectes/arrays a Vue/Javascript
-
-
-  - 
+- [ ] Identificació de patrons/components:
+  - [ ] Page amb ActionBar, a cada pàgina estem copiant i pegant el codi de la action Bar amb hamburguer icon -> Fer component i refactoritzar
   
+
 # NOTES SOBRE EMULADORS I EXECUCIÓ
 
 - [ ] Multiples carpetes emulador Android: https://www.stkent.com/2017/08/10/update-your-path-for-the-new-android-emulator-location.html
@@ -51,9 +52,18 @@ TODO:
 - [ ] LOG: tns device log
 - [ ] Mostrar llis aplicacions instal·lades: tns device list-applications
 
-# LOGIN/LOGOUT
+REFACTORITZACIONS:
+- [ ] Codi WET: onDrawerButtonTap () a totes les pàgines amb actionBar --> component actionBar
 
+# TABS
 
+- [ ] Oblidar TabView component: https://www.nativescript.org/blog/tabs-and-bottomnavigation-nativescripts-two-new-components
+- [ ] Versió 6.1 dos components nous:
+  - [ ] Navigation a Material spec: https://material.io/design/navigation/understanding-navigation.html#lateral-navigation
+  - [ ] BottomNavigation
+    - [ ] Material spec: https://material.io/components/bottom-navigation/#
+      - 3 a 5 opcions de mnu màxim. Més de 5 navigation Drawer i 2 o menys Tabs
+  - [ ] Tabs: https://material.io/components/tabs/#
 
 # TASQUES DIJOUS 16 GENER 2020
 

@@ -3,6 +3,7 @@
 // import tenants from '../../../api/tenants'
 
 export default {
+  // TODO LOGIN ACTIONS
   // [actions.SET_TENANTS] (context, tenants) {
   //   context.commit(mutations.SET_TENANTS, tenants)
   // },
