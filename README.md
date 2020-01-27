@@ -1,7 +1,59 @@
-# TASQUES DIVENDRES 17 GENER 2020
+# TASQUES DILLUNS 27 GENER 2020
 
-- [ ] Recursos extres
-  - [ ] ic_menu_back? 
+Comprovació Tasques ja haurien estar fetes:
+- [ ] PLUGINS:
+  - [ ] Axios instal·lat: està a package.json i al fitxer app.js i carpeta plugins tal com professor
+    - [ ] TOKEN EXPLOTACIÓ ben configurat amb un token vàlid explotació
+  - [ ] EventBus: ídem copiar del professor
+- [ ] VUEX: 
+  - [ ] Comprovar està instal·lat: package.json i s'importa carpeta store a app.js
+- Autenticació:
+  - [ ] Mocking de l'autenticació: 
+    - No la realitzem realment amb el backend per anar per feina
+  - Si afegim interfície gràfica:
+    - [ ] Menú a drawer per fer el logout amb confirm
+    - [ ] Menú mostra dialeg per fer el login: el login sempre funciona correctament
+      - [ ] Mostra link a registre -> Directement al backend
+    - [ ] O es mostra un o es mostra l'altre segons estem logats o no
+TODO: 
+
+- [ ] Llegir/Explicar apartat NOTES SOBRE EMULADORS I EXECUCIÓ
+- [ ] Autocomplete example, executar apartat Autocomplete RadAutocompleteTextView i explicar com funciona
+- [ ] Notes anteriors: https://gist.github.com/acacha/d99dbf60e4a40253fe90f7acf1aece65
+- [ ] Posar backend a explotació per poder utilitzar a Nativescript
+- [ ] Mòduls VUEX namespaced: true
+- [ ] Vuex: una sola mutació per modificar qualsevol estat (mutació mòdul AUTH):
+[types.SET] (state, payload) {
+  Vue.set(state, payload.key, payload.value)
+}
+- [ ] Explicar funció set i pq cal? Limitations identificació de canvis en objectes/arrays a Vue/Javascript
+
+
+  - 
+  
+# NOTES SOBRE EMULADORS I EXECUCIÓ
+
+- [ ] Multiples carpetes emulador Android: https://www.stkent.com/2017/08/10/update-your-path-for-the-new-android-emulator-location.html
+  - /home/sergi/android/emulator/emulator
+  - /home/sergi/android/tools/emulator
+  - [ ] UTILITZAR: /home/sergi/android/emulator/emulator -avd Nexus_5X_API_29_x86
+  - [ ] Posar abans emulator al path: export PATH="${PATH}:${ANDROID_HOME}emulator/:${ANDROID_HOME}tools/:${ANDROID_HOME}platform-tools/:${ANDROID_HOME}tools/bin"
+- [ ] Afegiur script npm run dev amb     "dev": "emulator @Nexus_5X_API_29_x86 & ; emulator @Pixel_C_API_29 & ; tns run",  
+- [ ] Emuladors i execució
+  - [ ] emulator -list-avds
+  - [ ] emulator @Nexus_5X_API_29_x86 && emulator @Pixel_C_API_29
+  - [ ] tns run --help
+    - [ ] emulator -list-avds
+  - Emuladors desde Android Studio:
+    - Comanda $ studio
+      - Menu Tools AVD Manager  
+  - [ ] tns devices: mostra dispositius/emuladors connectats
+- [ ] LOG: tns device log
+- [ ] Mostrar llis aplicacions instal·lades: tns device list-applications
+
+# LOGIN/LOGOUT
+
+
 
 # TASQUES DIJOUS 16 GENER 2020
 
@@ -643,6 +695,7 @@ https://stackoverflow.com/questions/58672942/htmlelement-is-not-defined-nativesc
 
 
 # VUEX 
+
 - Afegir vuex a nativescript: https://www.nativescript.org/blog/working-with-vuex-in-your-nativescript-vue-application
   - Using vue plugins: https://nativescript-vue.org/en/docs/getting-started/vue-plugins/
  

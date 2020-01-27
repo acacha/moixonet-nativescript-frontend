@@ -29,6 +29,7 @@ Vue.use(RadAutoComplete)
 Vue.use(VueDevtools)
 Vue.use(eventBus)
 Vue.use(axios)
+
 // REAL DEVICE
 // Vue.use(VueDevtools, { host: '192.168.1.42' })
 
