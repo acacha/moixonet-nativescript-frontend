@@ -184,10 +184,16 @@ export default {
     }
   },
   computed: {
-    ...mapGetters([
-      'loggedIn',
-      'user'
-    ])
+    // ...mapGetters([
+    //   'loggedIn',
+    //   'user'
+    // ])
+    loggedIn () {
+      return this.$store.getters['auth/loggedIn']
+    },
+    user () {
+      return this.$store.getters['auth/user']
+    }
   }
 }
 </script>
