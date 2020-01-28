@@ -25,8 +25,17 @@ export default {
 
       // TODO -> Si es confirma vol sortir del canal eliminar de l'storage
     },
-    selected () {
-      this.$navigateTo(ChannelDetails)
+    selected (args) {
+      console.log('SELECTED!')
+      console.log('args:')
+      console.log(args)
+      this.$navigateTo(ChannelDetails, {
+        props: {
+          channel: {
+            name: 'CACA'
+          }
+        }
+      })
     }
   }
 }

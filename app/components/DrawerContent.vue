@@ -70,7 +70,7 @@
           automation-text="nav_link_channel_details"
           columns="auto, *"
           :class="'nt-drawer__list-item' + (selectedPage === 'ChannelDetails' ? ' -selected': '')"
-          @tap="onNavigationItemTap(ChannelDetails)"
+          @tap="onNavigationItemTap(ChannelDetails, { props: { channel: { name: 'PROVA NOM CANAL DES DE MENU' } } })"
         >
           <Label col="0" text.decode="&#xf005;" class="nt-icon fas" />
           <Label col="1" text="Channel DETAILS" class="p-r-10" />

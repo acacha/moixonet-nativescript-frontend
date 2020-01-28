@@ -17,48 +17,66 @@
       <Label class="action-bar-title" automation-text="action_bar_label" text="Detalls canal" />
     </ActionBar>
 
-    <Tabs>
+    <Tabs selected-index="0" tabs-position="bottom">
       <TabStrip>
         <TabStripItem class="navigation__item">
-          <Label text="Home" />
+          <Label text="Missatges" />
           <Image src.decode="font://&#xf015;" class="fas t-36" />
         </TabStripItem>
         <TabStripItem class="navigation__item">
-          <Label text="Browse" />
+          <Label text="Calendari" />
           <Image src.decode="font://&#xf1ea;" class="far t-36" />
         </TabStripItem>
         <TabStripItem class="navigation__item">
-          <Label text="Search" />
+          <Label text="Informació" />
+          <Image src.decode="font://&#xf002;" class="fas t-36" />
+        </TabStripItem>
+        <TabStripItem class="navigation__item">
+          <Label text="Settings" />
           <Image src.decode="font://&#xf002;" class="fas t-36" />
         </TabStripItem>
       </TabStrip>
 
       <TabContentItem>
-        <Frame>
-          <Label text="CONTENT TAB 1" />
-        </Frame>
+        <GridLayout>
+          <Label text="Missatges" class="h2 text-center" />
+        </GridLayout>
       </TabContentItem>
 
       <TabContentItem>
-        <Frame>
-          <Label text="CONTENT TAB 2" />
-        </Frame>
+        <GridLayout>
+          <Label text="Calendari" class="h2 text-center" />
+        </GridLayout>
       </TabContentItem>
 
       <TabContentItem>
-        <Frame>
-          <Label text="CONTENT TAB 3" />
-        </Frame>
+        <channel-info-tab :channel="channel"/>
+      </TabContentItem>
+
+      <TabContentItem>
+        <GridLayout>
+          <Label text="Settings" class="h2 text-center" />
+        </GridLayout>
       </TabContentItem>
     </Tabs>
   </Page>
 </template>
 
 <script>
+import ChannelInfoTab from '../components/ChannelInfoTab'
 import * as utils from '~/shared/utils'
 
 export default {
   name: 'ChannelDetails',
+  components: {
+    'channel-info-tab': ChannelInfoTab
+  },
+  props: {
+    channel: {
+      type: Object,
+      required: true
+    }
+  },
   methods: {
     onDrawerButtonTap () {
       utils.showDrawer()

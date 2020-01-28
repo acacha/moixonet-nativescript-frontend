@@ -1,5 +1,65 @@
+# TODO
+
+- [ ] Apartat/pàgina Settinbs
+  - [ ] Ús de dividers, tres seccions:  
+    - [ ] General
+    - [ ] notificacions
+    - [ ] Quant a
+  - [ ] Ús de switchs:
+    - [ ] Confirmar per eliminar
+    - [ ] Activar/desactivar notificacions
+    - [ ] Silenci notificacions
+    - [ ] Vibració
+    - [ ] Poder escollir só de la notificació
+    - [ ] Enviar notificació de prova/comprovar notificacions
+
+SHARE:
+ - [ ] Compartir per xarxes socials URL de canal i/o missatge
+
+Detall de canal 
+  - [ ] Missatges
+    - [ ] Swipe to delete message
+    
+  - [ ] Action a ActinoBar
+    - [ ] Marcar tots els missatges com a llegits -> Confirm
+  - [ ] Tabs:
+    - [ ] Missatges
+    - [ ] Agenda -> Mostrar calendari
+    - [ ] Info del canal: Imatge, nom del canal i descripció
+    - [ ] Configuració
+      - [ ] Activar/desactivar notificacions
+      - [ ] Tags -> Missatges etiquetables
+      - [ ] Enviar missatge -> email/ bustia
+      - [ ] Eliminar/desubsciures del canal 
+      
+# MANUAL ROUTING PASSING PROPS
+
+```
+this.$navigateTo(Detail, {
+  transition: {},
+  transitioniOS: {},
+  transitionAndroid: {},
+
+  props: {
+    foo: 'bar',
+  }
+});
+```  
+
 # TASQUES DIMARTS 28 GENER 2020
 
+- [ ] Passar informació entre pàgines
+  - [ ] Master/Detail de canals
+    - [ ] Al fer click a un canal a la llista de canals (master) passar el canal al detail
+    - $navigateTo(Component, options)
+      - options: 
+        - props: Propietats del component Vue que representa una nova pàgina
+- [ ] Mostrar el número total de missatges del canal a la llista de canals (p.ex entre parentesi)
+- [ ] Millores CSS
+  - Llista de canals:
+    - Lletra més gran
+    - Més amplitud de la icona/imatge
+    - En comptes de botons -> icones/botó
 - [ ] Criteris de disseny:
   - [ ] Material spec
   - [ ] https://refactoringui.com/ -> Greys don’t have to be grey 141 -> OverLaycolor
