@@ -12,11 +12,12 @@
         ios.position="left"
         @tap="onDrawerButtonTap"
       />
-      <Label class="action-bar-title" text="CANALS PROVA" />
+      <Label class="action-bar-title pull-right" text="CANALS PROVA 11" />
+      <ActivityIndicator class="pull-left" :busy="loading" @busyChange="onBusyChanged" />
     </ActionBar>
 
     <StackLayout>
-      <Button text="Refresh" @tap="refresh"></Button>
+      <Button text="Refresh" @tap="refresh" />
       <ListView for="channel in channels" @itemTap="onItemTap">
         <v-template>
           <Label :text="channel.name" />
@@ -36,7 +37,8 @@ export default {
   data () {
     return {
       // channels: channelsFixture
-      channels: []
+      channels: [],
+      loading: true
     }
   },
   mounted () {
@@ -46,6 +48,10 @@ export default {
     await this.refresh()
   },
   methods: {
+    onBusyChanged (args) {
+      const indicator = args.object
+      console.log('indicator.busy changed to: ' + indicator.busy)
+    },
     onDrawerButtonTap () {
       utils.showDrawer()
     },
@@ -53,6 +59,7 @@ export default {
       console.log('ITEM TAP!')
     },
     async refresh () {
+      this.loading = true
       try {
         const result = await this.$axios.get('/api/v1/channels')
         this.channels = result.data
@@ -61,6 +68,7 @@ export default {
       } catch (error) {
         console.log(error)
       }
+      this.loading = false
     }
   }
 }

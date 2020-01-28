@@ -1,14 +1,46 @@
+# TASQUES DIMARTS 28 GENER 2020
+
+- [ ] Actualitzeu nativescript: npm install -g nativescript -> tns --version -> 6.3.3
+  - En teoria hi ha millores amb el HMR (Hot Module Reloading)
+- [ ] Actualitzeu PHPStorm
+  - [ ] Instal·leu/actulitzeu plugin nativescript
+  - [ ] Prepareu una execució a menu Run > Edit configurations
+- [ ] Comprovar funciona correctament connexió API (peticions axios amb Token correcte)
+  - [ ] facilitar la obtenció d'un token vàlid -> Resultat login correcte amb Laravel Passport i Proxy JANITOR
+  - [ ] Page ChannelsList exemple vam fer per provar funciona. Atents a la línia de comandes si apareix error 401 -> Cal posar token nou
+  - [ ] Millorar UX -> Succeix un error i no mostrem res a l'usuari final
+    - [ ] Spinner/Loading/ActivityIndicator
+      - [ ] Spec material: https://material.io/components/progress-indicators/#specs
+      - [ ] AtivityIndicator -> Circular
+      - [ ] Progress: https://nativescript-vue.org/es/docs/elements/components/progress/
+        - https://docs.nativescript.org/ui/components/progress
+        - https://docs.nativescript.org/angular/ui/ng-components/progress
+    - [ ] Utilitzat tècnica diferent que backend -> en comptes de loaind a cada button/component posar un loadinggeneral
+      - [ ] Interceptar totes les peticions axios amb un Middleware/Interceptors axios per activar el loading
+        - https://github.com/axios/axios#interceptors  
+- [ ] Snackbar plugin
+  - [ ] Material components. Proveu la demo de: https://github.com/Akylas/nativescript-material-components
+- [ ] LAYOUTS de pages
+  - [ ] Evitar codi WET Copy/paste -> ActivityIndicator, ActionBar etc són iguals a cada pàgina
+  
+# Spinner/Loading/ActivityIndicator
+
+Docs:
+- https://docs.nativescript.org/angular/ui/ng-components/activity-indicator
+- https://nativescript-vue.org/en/docs/elements/components/activity-indicator/
+- https://docs.nativescript.org/api-reference/classes/_ui_activity_indicator_.activityindicator
+
 # TASQUES DILLUNS 27 GENER 2020
 
 Comprovació Tasques ja haurien estar fetes:
-- [ ] PLUGINS:
-  - [ ] Axios instal·lat: està a package.json i al fitxer app.js i carpeta plugins tal com professor
-    - [ ] TOKEN EXPLOTACIÓ ben configurat amb un token vàlid explotació
-  - [ ] EventBus: ídem copiar del professor
-- [ ] VUEX: 
-  - [ ] Comprovar està instal·lat: package.json i s'importa carpeta store a app.js
+- [X] PLUGINS:
+  - [X] Axios instal·lat: està a package.json i al fitxer app.js i carpeta plugins tal com professor
+    - [X] TOKEN EXPLOTACIÓ ben configurat amb un token vàlid explotació
+  - [X] EventBus: ídem copiar del professor
+- [X] VUEX: 
+  - [x] Comprovar està instal·lat: package.json i s'importa carpeta store a app.js
 - Autenticació:
-  - [ ] Mocking de l'autenticació: 
+  - [X] Mocking de l'autenticació: 
     - No la realitzem realment amb el backend per anar per feina
   - Si afegim interfície gràfica:
     - [ ] Menú a drawer per fer el logout amb confirm
@@ -18,19 +50,19 @@ Comprovació Tasques ja haurien estar fetes:
 
 TODO: 
 
-- [ ] Llegir/Explicar apartat NOTES SOBRE EMULADORS I EXECUCIÓ
-- [ ] Autocomplete example, executar apartat Autocomplete RadAutocompleteTextView i explicar com funciona
-- [ ] Notes anteriors: https://gist.github.com/acacha/d99dbf60e4a40253fe90f7acf1aece65
-- [ ] Posar backend a explotació per poder utilitzar a Nativescript
-- [ ] Mòduls VUEX namespaced: true
-- [ ] Vuex: una sola mutació per modificar qualsevol estat (mutació mòdul AUTH):
+- [X] Llegir/Explicar apartat NOTES SOBRE EMULADORS I EXECUCIÓ
+- [X] Autocomplete example, executar apartat Autocomplete RadAutocompleteTextView i explicar com funciona
+- [X] Notes anteriors: https://gist.github.com/acacha/d99dbf60e4a40253fe90f7acf1aece65
+- [X] Mòduls VUEX namespaced: true
+- [X] Vuex: una sola mutació per modificar qualsevol estat (mutació mòdul AUTH):
 [types.SET] (state, payload) {
   Vue.set(state, payload.key, payload.value)
 }
-- [ ] Explicar funció set i pq cal? Limitations identificació de canvis en objectes/arrays a Vue/Javascript
+- [X] Explicar funció set i pq cal? Limitations identificació de canvis en objectes/arrays a Vue/Javascript
+- [ ] Posar backend a explotació per poder utilitzar a Nativescript
 - [ ] Identificació de patrons/components:
   - [ ] Page amb ActionBar, a cada pàgina estem copiant i pegant el codi de la action Bar amb hamburguer icon -> Fer component i refactoritzar
-  
+-   
 
 # NOTES SOBRE EMULADORS I EXECUCIÓ
 
@@ -57,13 +89,13 @@ REFACTORITZACIONS:
 
 # TABS
 
-- [ ] Oblidar TabView component: https://www.nativescript.org/blog/tabs-and-bottomnavigation-nativescripts-two-new-components
+- [X] Oblidar TabView component: https://www.nativescript.org/blog/tabs-and-bottomnavigation-nativescripts-two-new-components
 - [ ] Versió 6.1 dos components nous:
-  - [ ] Navigation a Material spec: https://material.io/design/navigation/understanding-navigation.html#lateral-navigation
-  - [ ] BottomNavigation
-    - [ ] Material spec: https://material.io/components/bottom-navigation/#
+  - [X] Navigation a Material spec: https://material.io/design/navigation/understanding-navigation.html#lateral-navigation
+  - [X] BottomNavigation
+    - [X] Material spec: https://material.io/components/bottom-navigation/#
       - 3 a 5 opcions de mnu màxim. Més de 5 navigation Drawer i 2 o menys Tabs
-  - [ ] Tabs: https://material.io/components/tabs/#
+  - [X] Tabs: https://material.io/components/tabs/#
 
 # TASQUES DIJOUS 16 GENER 2020
 
