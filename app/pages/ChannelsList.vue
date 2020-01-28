@@ -12,15 +12,15 @@
         ios.position="left"
         @tap="onDrawerButtonTap"
       />
-      <Label class="action-bar-title" text="CANALS PROVA AA" />
+      <Label class="action-bar-title" text="CANALS PROVA CCCSASA" />
     </ActionBar>
 
     <GridLayout>
       <StackLayout>
         <Button text="Refresh" @tap="refresh" />
-        <Button text="loading" @tap="loading=true" />
+        <Button text="loading" @tap="load" />
         <Button text="unloading" @tap="loading=false" />
-        <Label> Loading: {{ loading ? 'True': 'False'}}</Label>
+        <Label> Loading: {{ loading ? 'True': 'False' }}</Label>
         <ListView for="channel in channels" @itemTap="onItemTap">
           <v-template>
             <Label :text="channel.name" />
@@ -50,9 +50,12 @@
 </template>
 
 <script>
+import { SnackBar } from 'nativescript-material-snackbar'
 import SelectedPageService from '../shared/selected-page-service'
 // import channelsFixture from '../../e2e/fixtures/channels'
 import * as utils from '~/shared/utils'
+
+const snackbar = new SnackBar()
 
 export default {
   name: 'ChannelsList',
@@ -70,9 +73,38 @@ export default {
     await this.refresh()
   },
   methods: {
+    load () {
+      console.log('LOAD!!!!!!')
+      this.showColorfulSnackbar()
+    },
+    showSimpleSnackbar () {
+      snackbar.simple('I\'m a simple snackbar').then(result => console.log('Simple Snackbar:', result))
+    },
+    showActionSnackbar () {
+      snackbar
+        .action({
+          message: 'I\'m a snackbar with an action',
+          actionText: 'Dismiss',
+          hideDelay: 2000
+        })
+        .then(result => console.log('Action Snackbar:', result))
+    },
+    showColorfulSnackbar () {
+      snackbar
+        .action({
+          message: 'I\'m a colorful snackbar',
+          textColor: 'blue',
+          actionTextColor: 'yellow',
+          backgroundColor: 'green',
+          actionText: 'Dismiss',
+          hideDelay: 2000
+        })
+        .then(result => console.log('Action Snackbar:', result))
+    },
     onBusyChanged (args) {
       const indicator = args.object
       console.log('indicator.busy changed to: ' + indicator.busy)
+      this.showSimpleSnackbar()
     },
     onDrawerButtonTap () {
       utils.showDrawer()
