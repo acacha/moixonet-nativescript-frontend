@@ -1,5 +1,8 @@
 # TASQUES DIMARTS 28 GENER 2020
 
+- [ ] Criteris de disseny:
+  - [ ] Material spec
+  - [ ] https://refactoringui.com/ -> Greys don’t have to be grey 141 -> OverLaycolor
 - [ ] Actualitzeu nativescript: npm install -g nativescript -> tns --version -> 6.3.3
   - En teoria hi ha millores amb el HMR (Hot Module Reloading)
 - [ ] Actualitzeu PHPStorm
@@ -7,6 +10,9 @@
   - [ ] Prepareu una execució a menu Run > Edit configurations
 - [ ] Comprovar funciona correctament connexió API (peticions axios amb Token correcte)
   - [ ] facilitar la obtenció d'un token vàlid -> Resultat login correcte amb Laravel Passport i Proxy JANITOR
+    - [ ] Crear token per Tinker (vegeu backend)
+    - [ ] Crear token per interfície gràfica de Laravel passport (vegeu backend)
+    - [ ] Comanda php artisan -> Laravel commands https://laravel.com/docs/6.x/artisan -> php artisan create:token 
   - [ ] Page ChannelsList exemple vam fer per provar funciona. Atents a la línia de comandes si apareix error 401 -> Cal posar token nou
   - [ ] Millorar UX -> Succeix un error i no mostrem res a l'usuari final
     - [ ] Spinner/Loading/ActivityIndicator
@@ -15,6 +21,9 @@
       - [ ] Progress: https://nativescript-vue.org/es/docs/elements/components/progress/
         - https://docs.nativescript.org/ui/components/progress
         - https://docs.nativescript.org/angular/ui/ng-components/progress
+      - [ ] A l'apartat cellular de l'emulador reduir la velocitat de xarxa del dispositiu.
+    - [ ] Estil spinner. GridLayout per defecete sinó s'indiquen columnes/rows posa un element sobre l'altre
+       - [ ] Efecte overlay via CSS ->    
     - [ ] Utilitzat tècnica diferent que backend -> en comptes de loaind a cada button/component posar un loadinggeneral
       - [ ] Interceptar totes les peticions axios amb un Middleware/Interceptors axios per activar el loading
         - https://github.com/axios/axios#interceptors  

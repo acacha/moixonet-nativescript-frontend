@@ -12,18 +12,40 @@
         ios.position="left"
         @tap="onDrawerButtonTap"
       />
-      <Label class="action-bar-title pull-right" text="CANALS PROVA 11" />
-      <ActivityIndicator class="pull-left" :busy="loading" @busyChange="onBusyChanged" />
+      <Label class="action-bar-title" text="CANALS PROVA AA" />
     </ActionBar>
 
-    <StackLayout>
-      <Button text="Refresh" @tap="refresh" />
-      <ListView for="channel in channels" @itemTap="onItemTap">
-        <v-template>
-          <Label :text="channel.name" />
-        </v-template>
-      </ListView>
-    </StackLayout>
+    <GridLayout>
+      <StackLayout>
+        <Button text="Refresh" @tap="refresh" />
+        <Button text="loading" @tap="loading=true" />
+        <Button text="unloading" @tap="loading=false" />
+        <Label> Loading: {{ loading ? 'True': 'False'}}</Label>
+        <ListView for="channel in channels" @itemTap="onItemTap">
+          <v-template>
+            <Label :text="channel.name" />
+          </v-template>
+        </ListView>
+      </StackLayout>
+      <GridLayout v-if="loading">
+        <Label class="overlay">a</Label>
+        <ActivityIndicator class="indicator" :busy="loading" @busyChange="onBusyChanged" />
+      </GridLayout>
+    </GridLayout>
+
+    <!--    <GridLayout rows="auto, *">-->
+    <!--&lt;!&ndash;      <Button row="0"  col="0" class="btn btn-primary btn-active" text="Modify Busy property" (tap)="onTap()"></Button>&ndash;&gt;-->
+    <!--      <Button row="0" col="0" text="Refresh" @tap="refresh" />-->
+    <!--      <ListView row="1" col="0" for="channel in channels" @itemTap="onItemTap">-->
+    <!--        <v-template>-->
+    <!--          <Label :text="channel.name" />-->
+    <!--        </v-template>-->
+    <!--      </ListView>-->
+    <!--      <StackLayout row="0" col="0" rowSpan="2" class="loading">-->
+    <!--        <ActivityIndicator row="1" class="activity-indicator" width="100" height="100" busy="true"></ActivityIndicator>-->
+    <!--      </StackLayout>-->
+
+    <!--    </GridLayout>-->
   </Page>
 </template>
 
@@ -68,7 +90,7 @@ export default {
       } catch (error) {
         console.log(error)
       }
-      this.loading = false
+      // this.loading = false
     }
   }
 }
