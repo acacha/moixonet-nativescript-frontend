@@ -12,14 +12,15 @@
         ios.position="left"
         @tap="onDrawerButtonTap"
       />
-      <Label class="action-bar-title" text="CANALS PROVA CCCSASA" />
+      <Label class="action-bar-title" text="CANALS PROVA" />
     </ActionBar>
 
     <GridLayout>
       <StackLayout>
         <Button text="Refresh" @tap="refresh" />
         <Button text="loading" @tap="load" />
-        <Button text="unloading" @tap="loading=false" />
+        <Button text="unloading" @tap="unload" />
+        <Button text="snackbar" @tap="showColorfulSnackbar" />
         <Label> Loading: {{ loading ? 'True': 'False' }}</Label>
         <ListView for="channel in channels" @itemTap="onItemTap">
           <v-template>
@@ -28,24 +29,10 @@
         </ListView>
       </StackLayout>
       <GridLayout v-if="loading">
-        <Label class="overlay">a</Label>
-        <ActivityIndicator class="indicator" :busy="loading" @busyChange="onBusyChanged" />
+        <Label class="overlay" />
+        <ActivityIndicator class="indicator" :busy="loading" @busyChange="onBusyChanged" />yChanged" />-->
       </GridLayout>
     </GridLayout>
-
-    <!--    <GridLayout rows="auto, *">-->
-    <!--&lt;!&ndash;      <Button row="0"  col="0" class="btn btn-primary btn-active" text="Modify Busy property" (tap)="onTap()"></Button>&ndash;&gt;-->
-    <!--      <Button row="0" col="0" text="Refresh" @tap="refresh" />-->
-    <!--      <ListView row="1" col="0" for="channel in channels" @itemTap="onItemTap">-->
-    <!--        <v-template>-->
-    <!--          <Label :text="channel.name" />-->
-    <!--        </v-template>-->
-    <!--      </ListView>-->
-    <!--      <StackLayout row="0" col="0" rowSpan="2" class="loading">-->
-    <!--        <ActivityIndicator row="1" class="activity-indicator" width="100" height="100" busy="true"></ActivityIndicator>-->
-    <!--      </StackLayout>-->
-
-    <!--    </GridLayout>-->
   </Page>
 </template>
 
@@ -53,6 +40,7 @@
 import { SnackBar } from 'nativescript-material-snackbar'
 import SelectedPageService from '../shared/selected-page-service'
 // import channelsFixture from '../../e2e/fixtures/channels'
+import * as mutations from '../store/mutation-types'
 import * as utils from '~/shared/utils'
 
 const snackbar = new SnackBar()
@@ -62,8 +50,12 @@ export default {
   data () {
     return {
       // channels: channelsFixture
-      channels: [],
-      loading: true
+      channels: []
+    }
+  },
+  computed: {
+    loading () {
+      return this.$store.getters['axios/loading']
     }
   },
   mounted () {
@@ -73,9 +65,11 @@ export default {
     await this.refresh()
   },
   methods: {
+    unload () {
+      this.$store.commit('axios/' + mutations.SET, { key: 'loading', value: false })
+    },
     load () {
-      console.log('LOAD!!!!!!')
-      this.showColorfulSnackbar()
+      this.$store.commit('axios/' + mutations.SET, { key: 'loading', value: true })
     },
     showSimpleSnackbar () {
       snackbar.simple('I\'m a simple snackbar').then(result => console.log('Simple Snackbar:', result))
@@ -113,7 +107,7 @@ export default {
       console.log('ITEM TAP!')
     },
     async refresh () {
-      this.loading = true
+      // this.load()
       try {
         const result = await this.$axios.get('/api/v1/channels')
         this.channels = result.data
@@ -122,7 +116,7 @@ export default {
       } catch (error) {
         console.log(error)
       }
-      // this.loading = false
+      // this.unload()
     }
   }
 }

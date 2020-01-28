@@ -46,51 +46,57 @@ this.$navigateTo(Detail, {
 });
 ```  
 
-# TASQUES DIMARTS 28 GENER 2020
-
+# TASQUES DIJOUS 30 GENER 2020
+- [ ] Millores CSS
+  - Llista de canals:
+    - Lletra més gran
+    - Més amplitud de la icona/imatge
+    - En comptes de botons -> icones/botó
 - [ ] Passar informació entre pàgines
   - [ ] Master/Detail de canals
     - [ ] Al fer click a un canal a la llista de canals (master) passar el canal al detail
     - $navigateTo(Component, options)
       - options: 
         - props: Propietats del component Vue que representa una nova pàgina
-- [ ] Mostrar el número total de missatges del canal a la llista de canals (p.ex entre parentesi)
-- [ ] Millores CSS
-  - Llista de canals:
-    - Lletra més gran
-    - Més amplitud de la icona/imatge
-    - En comptes de botons -> icones/botó
-- [ ] Criteris de disseny:
-  - [ ] Material spec
-  - [ ] https://refactoringui.com/ -> Greys don’t have to be grey 141 -> OverLaycolor
-- [ ] Actualitzeu nativescript: npm install -g nativescript -> tns --version -> 6.3.3
-  - En teoria hi ha millores amb el HMR (Hot Module Reloading)
-- [ ] Actualitzeu PHPStorm
-  - [ ] Instal·leu/actulitzeu plugin nativescript
-  - [ ] Prepareu una execució a menu Run > Edit configurations
-- [ ] Comprovar funciona correctament connexió API (peticions axios amb Token correcte)
-  - [ ] facilitar la obtenció d'un token vàlid -> Resultat login correcte amb Laravel Passport i Proxy JANITOR
-    - [ ] Crear token per Tinker (vegeu backend)
-    - [ ] Crear token per interfície gràfica de Laravel passport (vegeu backend)
-    - [ ] Comanda php artisan -> Laravel commands https://laravel.com/docs/6.x/artisan -> php artisan create:token 
-  - [ ] Page ChannelsList exemple vam fer per provar funciona. Atents a la línia de comandes si apareix error 401 -> Cal posar token nou
-  - [ ] Millorar UX -> Succeix un error i no mostrem res a l'usuari final
-    - [ ] Spinner/Loading/ActivityIndicator
-      - [ ] Spec material: https://material.io/components/progress-indicators/#specs
-      - [ ] AtivityIndicator -> Circular
-      - [ ] Progress: https://nativescript-vue.org/es/docs/elements/components/progress/
-        - https://docs.nativescript.org/ui/components/progress
-        - https://docs.nativescript.org/angular/ui/ng-components/progress
-      - [ ] A l'apartat cellular de l'emulador reduir la velocitat de xarxa del dispositiu.
-    - [ ] Estil spinner. GridLayout per defecete sinó s'indiquen columnes/rows posa un element sobre l'altre
-       - [ ] Efecte overlay via CSS ->    
-    - [ ] Utilitzat tècnica diferent que backend -> en comptes de loaind a cada button/component posar un loadinggeneral
-      - [ ] Interceptar totes les peticions axios amb un Middleware/Interceptors axios per activar el loading
-        - https://github.com/axios/axios#interceptors  
-- [ ] Snackbar plugin
-  - [ ] Material components. Proveu la demo de: https://github.com/Akylas/nativescript-material-components
 - [ ] LAYOUTS de pages
   - [ ] Evitar codi WET Copy/paste -> ActivityIndicator, ActionBar etc són iguals a cada pàgina
+- [X] Utilitzat tècnica diferent que backend -> en comptes de loaind a cada button/component posar un loadinggeneral
+  - [ ] Interceptar totes les peticions axios amb un Middleware/Interceptors axios per activar el loading
+    - https://github.com/axios/axios#interceptors
+             
+# TASQUES DIMARTS 28 GENER 2020
+
+
+- [X] Mostrar el número total de missatges del canal a la llista de canals (p.ex entre parentesi)
+- [X] Criteris de disseny:
+  - [X] Material spec
+  - [X] https://refactoringui.com/ -> Greys don’t have to be grey 141 -> OverLaycolor
+- [X] Actualitzeu nativescript: npm install -g nativescript -> tns --version -> 6.3.3
+  - En teoria hi ha millores amb el HMR (Hot Module Reloading)
+- [X] Actualitzeu PHPStorm
+  - [X] Instal·leu/actulitzeu plugin nativescript
+  - [X] Prepareu una execució a menu Run > Edit configurations
+- [X] Comprovar funciona correctament connexió API (peticions axios amb Token correcte)
+  - [X] facilitar la obtenció d'un token vàlid -> Resultat login correcte amb Laravel Passport i Proxy JANITOR
+    - [X] Crear token per Tinker (vegeu backend)
+    - [X] Crear token per interfície gràfica de Laravel passport (vegeu backend)
+    - [X] Comanda php artisan -> Laravel commands https://laravel.com/docs/6.x/artisan -> php artisan create:token 
+  - [X] Page ChannelsList exemple vam fer per provar funciona. Atents a la línia de comandes si apareix error 401 -> Cal posar token nou
+  - [X] Millorar UX -> Succeix un error i no mostrem res a l'usuari final
+    - [X] Spinner/Loading/ActivityIndicator
+      - [X] Spec material: https://material.io/components/progress-indicators/#specs
+      - [X] ActivityIndicator -> Circular
+      - [X] Progress: https://nativescript-vue.org/es/docs/elements/components/progress/
+        - https://docs.nativescript.org/ui/components/progress
+        - https://docs.nativescript.org/angular/ui/ng-components/progress
+      - [X] A l'apartat cellular de l'emulador reduir la velocitat de xarxa del dispositiu.
+    - [X] Estil spinner. GridLayout per defecete sinó s'indiquen columnes/rows posa un element sobre l'altre
+       - [X] Efecte overlay via CSS ->    
+    - [X] Utilitzat tècnica diferent que backend -> en comptes de loaind a cada button/component posar un loadinggeneral
+      - [ ] Interceptar totes les peticions axios amb un Middleware/Interceptors axios per activar el loading
+        - https://github.com/axios/axios#interceptors  
+- [X] Snackbar plugin
+  - [X] Material components. Proveu la demo de: https://github.com/Akylas/nativescript-material-components
   
 # Spinner/Loading/ActivityIndicator
 

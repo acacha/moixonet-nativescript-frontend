@@ -19,5 +19,12 @@
     "image": "TODO_URI",
     "messages_number": 14,
     "created_at": "fa 6 dies"
+  },
+  {
+    "id": 4,
+    "name": "Canal 4",
+    "image": "TODO_URI",
+    "messages_number": 4,
+    "created_at": "fa 6 dies"
   }
 ]
