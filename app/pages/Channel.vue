@@ -34,12 +34,17 @@
 </template>
 
 <script>
+import SelectedPageService from '../shared/selected-page-service'
+
 export default {
   name: 'Channel',
   data () {
     return {
       selectedIndex: 0
     }
+  },
+  mounted () {
+    SelectedPageService.getInstance().updateSelectedPage('Channel')
   },
   methods: {
     indexChange (args) {

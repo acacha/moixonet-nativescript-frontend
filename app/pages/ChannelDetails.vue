@@ -65,6 +65,7 @@
 <script>
 import ChannelInfoTab from '../components/ChannelInfoTab'
 import * as utils from '~/shared/utils'
+import SelectedPageService from "../shared/selected-page-service"
 
 export default {
   name: 'ChannelDetails',
@@ -76,6 +77,9 @@ export default {
       type: Object,
       required: true
     }
+  },
+  mounted () {
+    SelectedPageService.getInstance().updateSelectedPage('ChannelsList')
   },
   methods: {
     onDrawerButtonTap () {

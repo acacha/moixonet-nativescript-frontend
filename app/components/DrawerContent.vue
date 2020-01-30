@@ -1,3 +1,4 @@
+<!--suppress NpmUsedModulesInstalled -->
 <template lang="html">
   <GridLayout rows="auto, *" class="nt-drawer__content">
     <StackLayout v-if="loggedIn && user !==null" row="0" class="nt-drawer__header">
@@ -51,7 +52,12 @@
           <Label col="1" text="Featured" class="p-r-10" />
         </GridLayout>
 
-        <GridLayout automation-text="nav_link_featured" columns="auto, *" :class="'nt-drawer__list-item' + (selectedPage === 'ChannelsList' ? ' -selected': '')" @tap="onNavigationItemTap(ChannelsList)">
+        <GridLayout
+          automation-text="nav_link_channels"
+          columns="auto, *"
+          :class="'nt-drawer__list-item' + (selectedPage === 'ChannelsList' ? ' -selected': '')"
+          @tap="onNavigationItemTap(ChannelsList)"
+        >
           <Label col="0" text.decode="&#xf005;" class="nt-icon fas" />
           <Label col="1" text="Channels" class="p-r-10" />
         </GridLayout>
@@ -107,7 +113,7 @@
 <script>
 /* eslint-disable vue/no-unused-components */
 
-import { mapGetters } from 'vuex'
+// import { mapGetters } from 'vuex'
 import Home from '../pages/Home'
 import Browse from '../pages/Browse'
 import Featured from '../pages/Featured'
@@ -122,6 +128,7 @@ import SelectedPageService from '~/shared/selected-page-service'
 import url from '@/utils/url'
 
 export default {
+  name: 'DrawerContent',
   components: {
     Home,
     Browse,
@@ -144,15 +151,19 @@ export default {
       selectedPage: ''
     }
   },
+  computed: {
+    // ...mapGetters([
+    //   'loggedIn',
+    //   'user'
+    // ])
+    loggedIn () {
+      return this.$store.getters['auth/loggedIn']
+    },
+    user () {
+      return this.$store.getters['auth/user']
+    }
+  },
   mounted () {
-    console.log('MOUNTED!!!!!!!!!!!!!!')
-    console.log('AXIOS:')
-    console.log(this.$axios)
-    // console.log(this)
-    // console.log(this.$store)
-    console.log(this.$store.state.auth.loggedIn)
-    console.log('LoggedIn:')
-    console.log(this.$store.getters['auth/loggedIn'])
     SelectedPageService.getInstance().selectedPage$
       .subscribe((selectedPage) => { this.selectedPage = selectedPage })
   },
@@ -181,18 +192,6 @@ export default {
       // exports.launch = function (url) {
       //   utils.openUrl(url)
       // }
-    }
-  },
-  computed: {
-    // ...mapGetters([
-    //   'loggedIn',
-    //   'user'
-    // ])
-    loggedIn () {
-      return this.$store.getters['auth/loggedIn']
-    },
-    user () {
-      return this.$store.getters['auth/user']
     }
   }
 }

@@ -1,5 +1,9 @@
 # TODO
 
+- [ ] Drawer
+  - [ ] Controleu que apareguin correctament seleccionats els items de menú (menú actual ha d'estar amb color fons que el remarqui)
+    - [ ] A les pàgines cal utilitzar el servei SelectedPage per indicar quina pàgina està seleccionada/activa: 
+       - SelectedPageService.getInstance().updateSelectedPage('ChannelsList')
 - [ ] Estem fent una replica aplicatiu Ebando -> instal·leu-vos tots l'aplicació al mòbil
 - [ ] Apartat/pàgina Settings
   - [ ] Ús de dividers, tres seccions:  
@@ -62,8 +66,10 @@ this.$navigateTo(Detail, {
 - [ ] LAYOUTS de pages
   - [ ] Evitar codi WET Copy/paste -> ActivityIndicator, ActionBar etc són iguals a cada pàgina
 - [X] Utilitzar tècnica diferent que backend -> en comptes de loading a cada button/component posar un loadinggeneral
-  - [ ] Interceptar totes les peticions axios amb un Middleware/Interceptors axios per activar el loading
+  - [X] Interceptar totes les peticions axios amb un Middleware/Interceptors axios per activar el loading
     - https://github.com/axios/axios#interceptors
+  - [ ] Ja no caldrà més fer $snackbar.showError() als components
+  - [ ] Tampoc no cal activar desativar loadings. Es pot executar el cosy sense try catch!!  
              
 # TASQUES DIMARTS 28 GENER 2020
 

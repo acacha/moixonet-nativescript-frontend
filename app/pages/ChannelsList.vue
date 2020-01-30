@@ -59,7 +59,7 @@ export default {
     }
   },
   mounted () {
-    SelectedPageService.getInstance().updateSelectedPage('Browse')
+    SelectedPageService.getInstance().updateSelectedPage('ChannelsList')
   },
   async created () {
     await this.refresh()
@@ -107,16 +107,8 @@ export default {
       console.log('ITEM TAP!')
     },
     async refresh () {
-      // this.load()
-      try {
-        const result = await this.$axios.get('/api/v1/channels')
-        this.channels = result.data
-        console.log('result:')
-        console.log(result)
-      } catch (error) {
-        console.log(error)
-      }
-      // this.unload()
+      const result = await this.$axios.get('/api/v1/channels')
+      this.channels = result.data
     }
   }
 }
