@@ -17,13 +17,6 @@ const myAxios = axios.create({
   }
 })
 
-// unload () {
-//   this.$store.commit('axios/' + mutations.SET, { key: 'loading', value: false })
-// },
-// load () {
-//   this.$store.commit('axios/' + mutations.SET, { key: 'loading', value: true })
-// },
-
 // INTERCEPTORS
 // https://github.com/axios/axios#interceptors
 myAxios.interceptors.request.use(function (config) {
@@ -36,6 +29,7 @@ myAxios.interceptors.request.use(function (config) {
   console.log('######### REQUEST ERROR INTERCEPTED!!!!!!!!!!!!!!!')
   console.log('ERROR:')
   console.log(error)
+  snackbar.simple(error)
   return Promise.reject(error)
 })
 
@@ -61,13 +55,16 @@ myAxios.interceptors.response.use(function (response) {
     console.log(error.response.data)
     console.log(error.response.status)
     // console.log(error.response.headers)
-    if (error.response.status === 401) {
-      // TODO SHOW MESSAGE NEEDS TO RELOGIN -> REDIRECT TO LOGIN
+    if (parseInt(error.response.status) === 401) {
       console.log('$$$$$$$$$$$ 401 $$$$$$$')
-      snackbar.simple('YOU NEED TO RELOGIN!').then(result => console.log('Simple Snackbar:', result))
+      snackbar.simple('YOU NEED TO RELOGIN!').then(
+        result => console.log('Simple Snackbar:', result)
+        // TODO SHOW PAGE LOGIN WHEN WE HAVE ONE
+      )
+    } else if (parseInt(error.response.status) === 403) {
+      snackbar.simple('No teniu permisos per realitzar aquesta acció')
     } else {
-      // SHOW SNACKBARERROR
-      snackbar.simple('ERROR AXIOS INTERCEPTED').then(result => console.log('Simple Snackbar:', result))
+      snackbar.simple('ERROR AXIOS INTERCEPTED: ' + error)
     }
   } else if (error.request) {
     console.log('CASE 2')

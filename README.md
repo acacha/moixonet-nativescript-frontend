@@ -1,6 +1,7 @@
 # TODO
 
-- [ ] Apartat/pàgina Settinbs
+- [ ] Estem fent una replica aplicatiu Ebando -> instal·leu-vos tots l'aplicació al mòbil
+- [ ] Apartat/pàgina Settings
   - [ ] Ús de dividers, tres seccions:  
     - [ ] General
     - [ ] notificacions
@@ -20,7 +21,7 @@ Detall de canal
   - [ ] Missatges
     - [ ] Swipe to delete message
     
-  - [ ] Action a ActinoBar
+  - [ ] Action a ActionBar
     - [ ] Marcar tots els missatges com a llegits -> Confirm
   - [ ] Tabs:
     - [ ] Missatges
@@ -60,7 +61,7 @@ this.$navigateTo(Detail, {
         - props: Propietats del component Vue que representa una nova pàgina
 - [ ] LAYOUTS de pages
   - [ ] Evitar codi WET Copy/paste -> ActivityIndicator, ActionBar etc són iguals a cada pàgina
-- [X] Utilitzat tècnica diferent que backend -> en comptes de loaind a cada button/component posar un loadinggeneral
+- [X] Utilitzar tècnica diferent que backend -> en comptes de loading a cada button/component posar un loadinggeneral
   - [ ] Interceptar totes les peticions axios amb un Middleware/Interceptors axios per activar el loading
     - https://github.com/axios/axios#interceptors
              
