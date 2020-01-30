@@ -9,4 +9,7 @@ export default {
     // state[payload.key] = payload.value -> NO VA AMB VUE
     // state.payload.key = payload.value EXECUTION ERROR
   }
+  // EXEMPLE ÚS
+  // this.$store.commit(types.SET, { key: 'loggedIn', value: true })
+  // this.$store.commit(types.SET, { key: 'user', { name: 'Pepe Pardo'} })
 }
