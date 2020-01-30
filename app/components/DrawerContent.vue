@@ -19,7 +19,7 @@
           @tap="onNavigationItemTap(Home)"
         >
           <Label col="0" text.decode="&#xf015;" class="nt-icon fas" />
-          <Label col="1" text="Home" class="p-r-10" />
+          <Label col="1" text="Canals" class="p-r-10" />
         </GridLayout>
 
         <GridLayout
@@ -43,33 +43,13 @@
         </GridLayout>
 
         <GridLayout
-          automation-text="nav_link_featured"
-          columns="auto, *"
-          :class="'nt-drawer__list-item' + (selectedPage === 'Featured' ? ' -selected': '')"
-          @tap="onNavigationItemTap(Featured)"
-        >
-          <Label col="0" text.decode="&#xf005;" class="nt-icon fas" />
-          <Label col="1" text="Featured" class="p-r-10" />
-        </GridLayout>
-
-        <GridLayout
           automation-text="nav_link_channels"
           columns="auto, *"
           :class="'nt-drawer__list-item' + (selectedPage === 'ChannelsList' ? ' -selected': '')"
           @tap="onNavigationItemTap(ChannelsList)"
         >
           <Label col="0" text.decode="&#xf005;" class="nt-icon fas" />
-          <Label col="1" text="Channels" class="p-r-10" />
-        </GridLayout>
-
-        <GridLayout
-          automation-text="nav_link_channel"
-          columns="auto, *"
-          :class="'nt-drawer__list-item' + (selectedPage === 'Channel' ? ' -selected': '')"
-          @tap="onNavigationItemTap(Channel)"
-        >
-          <Label col="0" text.decode="&#xf005;" class="nt-icon fas" />
-          <Label col="1" text="Channel" class="p-r-10" />
+          <Label col="1" text="Channels List" class="p-r-10" />
         </GridLayout>
 
         <GridLayout
@@ -116,12 +96,10 @@
 // import { mapGetters } from 'vuex'
 import Home from '../pages/Home'
 import Browse from '../pages/Browse'
-import Featured from '../pages/Featured'
 import Search from '../pages/Search'
 import Settings from '../pages/Settings'
 import ChannelsList from '../pages/ChannelsList'
 import ChannelDetails from '../pages/ChannelDetails'
-import Channel from '../pages/Channel'
 import AutocompleteEx from '../pages/AutocompleteEx'
 import * as utils from '~/shared/utils'
 import SelectedPageService from '~/shared/selected-page-service'
@@ -132,7 +110,6 @@ export default {
   components: {
     Home,
     Browse,
-    Featured,
     Search,
     Settings,
     ChannelDetails
@@ -141,21 +118,15 @@ export default {
     return {
       Home,
       Browse,
-      Featured,
       Search,
       Settings,
       ChannelsList,
-      Channel,
       AutocompleteEx,
       ChannelDetails,
       selectedPage: ''
     }
   },
   computed: {
-    // ...mapGetters([
-    //   'loggedIn',
-    //   'user'
-    // ])
     loggedIn () {
       return this.$store.getters['auth/loggedIn']
     },

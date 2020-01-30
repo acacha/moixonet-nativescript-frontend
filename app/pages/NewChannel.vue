@@ -1,37 +1,11 @@
-<!--suppress ES6ModulesDependencies, SpellCheckingInspection -->
-<template
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://schemas.android.com/apk/res/android "
->
-  <Page class="page">
-    <ActionBar class="action-bar">
-      <NavigationButton text="Go Back" android-system-icon="ic_menu_back" @tap="$navigateBack" />
-      <ActionItem
-        icon="res://menu"
-        text="hamburguer_icon"
-        android:visibility="collapsed"
-        ios.position="left"
-        @tap="$navigateBack"
-      />
-<!--      <SearchBar hint="Search hint" :text="channel" @textChange="onTextChanged" @returnPress="onReturnPress" @submit="onSubmit" />-->
-
-      <!--      <TextField-->
-<!--        v-model="channel"-->
-<!--        hint="Canal..."-->
-<!--        @textChange="onTextChange"-->
-<!--        @focus="onFocus"-->
-<!--        @blur="onBlur"-->
-<!--        @returnPress="onReturnPress"-->
-<!--      />-->
-    </ActionBar>
-
+<!--suppress ES6ModulesDependencies, SpellCheckingInspection, HtmlUnknownAttribute -->
+<template>
+  <PageLayout title="Nou Canal" name="Home">
     <GridLayout class="page__content">
       <SearchBar hint="Search hint" :text="channel" @textChange="onTextChanged" @returnPress="onReturnPress" @submit="onSubmit" />
-      <published-channels/>
-      <!--            TODO PUBLISHED CHANNELS LIST AND FILTERED-->
+      <published-channels />
     </GridLayout>
-  </Page>
+  </PageLayout>
 </template>
 
 <script>
@@ -90,11 +64,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-    // Start custom common variables
-    @import '~@nativescript/theme/scss/variables/blue';
-    // End custom common variables
-
-    // Custom styles
-</style>

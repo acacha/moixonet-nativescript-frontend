@@ -327,14 +327,8 @@ import Theme from "nativescript-theme-core";
 Theme.setMode(Theme.Dark); // Or Theme.Light
 ```
 
-Per canviar skins:
-
-```
-import themes from "nativescript-themes";
-``` 
-
 I utilitzar applyThemeCss. Vegeu:
-
+- https://stackoverflow.com/questions/55579984/nativescript-angular-changing-theme
 - https://github.com/NativeScript/theme/blob/master/app/pages/themes.xml
 - https://github.com/NativeScript/theme/blob/master/app/pages/themes.js
 

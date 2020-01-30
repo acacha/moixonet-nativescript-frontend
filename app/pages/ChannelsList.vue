@@ -1,26 +1,14 @@
-<template
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://schemas.android.com/apk/res/android "
->
-  <Page class="page">
-    <ActionBar class="action-bar">
-      <NavigationButton ios:visibility="collapsed" icon="res://menu" @tap="onDrawerButtonTap" />
-      <ActionItem
-        icon="res://menu"
-        android:visibility="collapsed"
-        ios.position="left"
-        @tap="onDrawerButtonTap"
-      />
-      <Label class="action-bar-title" text="CANALS PROVA" />
-    </ActionBar>
-
+<!--suppress SpellCheckingInspection -->
+<template>
+  <PageLayout title="CANALS PROVA" name="ChannelsList">
     <GridLayout>
       <StackLayout>
         <Button text="Refresh" @tap="refresh" />
         <Button text="loading" @tap="load" />
         <Button text="unloading" @tap="unload" />
-        <Button text="snackbar" @tap="showColorfulSnackbar" />
+        <Button text="snackbar 1" @tap="showSimpleSnackbar" />
+        <Button text="snackbar 2" @tap="showActionSnackbar" />
+        <Button text="snackbar 3" @tap="showColorfulSnackbar" />
         <Label> Loading: {{ loading ? 'True': 'False' }}</Label>
         <ListView for="channel in channels" @itemTap="onItemTap">
           <v-template>
@@ -30,10 +18,10 @@
       </StackLayout>
       <GridLayout v-if="loading">
         <Label class="overlay" />
-        <ActivityIndicator class="indicator" :busy="loading" @busyChange="onBusyChanged" />yChanged" />-->
+        <ActivityIndicator class="indicator" :busy="loading" />
       </GridLayout>
     </GridLayout>
-  </Page>
+  </PageLayout>
 </template>
 
 <script>
@@ -94,11 +82,6 @@ export default {
           hideDelay: 2000
         })
         .then(result => console.log('Action Snackbar:', result))
-    },
-    onBusyChanged (args) {
-      const indicator = args.object
-      console.log('indicator.busy changed to: ' + indicator.busy)
-      this.showSimpleSnackbar()
     },
     onDrawerButtonTap () {
       utils.showDrawer()

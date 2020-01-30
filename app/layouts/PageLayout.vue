@@ -1,4 +1,8 @@
-<template>
+<template
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://schemas.android.com/apk/res/android "
+>
   <Page class="page">
     <ActionBar class="action-bar">
       <NavigationButton
@@ -18,7 +22,6 @@
     </ActionBar>
 
     <slot>YOUR PAGE CONTENT HERE!</slot>
-
   </Page>
 </template>
 
@@ -48,3 +51,11 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+  // Start custom common variables
+  @import '~@nativescript/theme/scss/variables/blue';
+  // End custom common variables
+
+  // Custom styles
+</style>

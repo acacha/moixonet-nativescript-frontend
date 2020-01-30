@@ -65,7 +65,12 @@ myAxios.interceptors.response.use(function (response) {
     } else if (parseInt(error.response.status) === 403) {
       snackbar.simple('No teniu permisos per realitzar aquesta acció')
     } else {
-      snackbar.simple('ERROR AXIOS INTERCEPTED: ' + error)
+      snackbar.action({
+        message: 'ERROR AXIOS INTERCEPTED: ' + error,
+        backgroundColor: 'red',
+        actionText: 'Dismiss',
+        hideDelay: 2000
+      })
     }
   } else if (error.request) {
     console.log('CASE 2')

@@ -1,25 +1,6 @@
-<!--suppress HtmlUnknownTag, XmlUnboundNsPrefix -->
+<!--suppress HtmlUnknownTag, XmlUnboundNsPrefix, HtmlUnknownAttribute -->
 <template>
-  <Page>
-    <ActionBar :title="title">
-      <!--
-            Use the NavigationButton as a side-drawer button in Android
-            because ActionItems are shown on the right side of the ActionBar
-            -->
-      <NavigationButton ios:visibility="collapsed" icon="res://menu" @tap="showDrawer" />
-      <!--
-            Use the ActionItem for IOS with position set to left. Using the
-            NavigationButton as a side-drawer button in iOS is not possible,
-            because its function is to always navigate back in the application.
-            -->
-      <ActionItem
-        icon="res://menu"
-        android:visibility="collapsed"
-        ios.position="left"
-        @tap="showDrawer"
-      />
-      <Label class="action-bar-title" text="Browse" />
-    </ActionBar>
+  <PageLayout title="Exemple autocomplete" name="AutocompleteEx">
     <StackLayout ios:background-color="#CDCECE" padding="5">
       <Label text="Select country" />
       <RadAutoCompleteTextView
@@ -46,7 +27,7 @@
         <Button margin="5" text="Tokens" @tap="onTokensSelected" />
       </StackLayout>
     </StackLayout>
-  </Page>
+  </PageLayout>
 </template>
 
 <script>
@@ -81,40 +62,40 @@ export default {
     // onNavigationButtonTap () {
     //   Frame.topmost().goBack()
     // },
-    onSuggestSelected (args) {
+    onSuggestSelected () {
       console.log('onSuggestSelected!')
       this.suggestMode = AutoCompleteSuggestMode.Suggest
       this.$refs.autocomplete.resetAutoComplete()
     },
-    onAppendSelected (args) {
+    onAppendSelected () {
       console.log('onAppendSelected!')
       this.suggestMode = AutoCompleteSuggestMode.Append
       this.completionMode = AutoCompleteCompletionMode.StartsWith
       this.$refs.autocomplete.resetAutoComplete()
     },
-    onSuggestAppendSelected (args) {
+    onSuggestAppendSelected () {
       console.log('onSuggestAppendSelected')
       this.suggestMode = AutoCompleteSuggestMode.SuggestAppend
       this.completionMode = AutoCompleteCompletionMode.StartsWith
       this.$refs.autocomplete.resetAutoComplete()
     },
-    onStartsWithSelected (args) {
+    onStartsWithSelected () {
       console.log('onStartsWithSelected')
       this.completionMode = AutoCompleteCompletionMode.StartsWith
       this.$refs.autocomplete.resetAutoComplete()
     },
-    onContainsSelected (args) {
+    onContainsSelected () {
       console.log('onContainsSelected')
       this.completionMode = AutoCompleteCompletionMode.Contains
       this.suggestMode = AutoCompleteSuggestMode.Suggest
       this.$refs.autocomplete.resetAutoComplete()
     },
-    onPlainSelected (args) {
+    onPlainSelected () {
       console.log('onPlainSelected')
       this.displayMode = AutoCompleteDisplayMode.Plain
       this.$refs.autocomplete.resetAutoComplete()
     },
-    onTokensSelected (args) {
+    onTokensSelected () {
       console.log('onTokensSelected')
       this.displayMode = AutoCompleteDisplayMode.Tokens
       this.$refs.autocomplete.resetAutoComplete()
