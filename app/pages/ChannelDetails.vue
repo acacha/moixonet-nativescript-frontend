@@ -1,22 +1,5 @@
 <template lang="html">
-  <Page class="page">
-    <ActionBar class="action-bar">
-      <NavigationButton
-        text="hamburguer_icon"
-        ios:visibility="collapsed"
-        icon="res://menu"
-        @tap="onDrawerButtonTap"
-      />
-      <ActionItem
-        icon="res://menu"
-        text="hamburguer_icon"
-        android:visibility="collapsed"
-        ios.position="left"
-        @tap="onDrawerButtonTap"
-      />
-      <Label class="action-bar-title" automation-text="action_bar_label" text="Detalls canal" />
-    </ActionBar>
-
+  <PageLayout :title="channel.name" :name="ChannelDetails">
     <Tabs selected-index="0" tabs-position="bottom">
       <TabStrip>
         <TabStripItem class="navigation__item">
@@ -50,7 +33,7 @@
       </TabContentItem>
 
       <TabContentItem>
-        <channel-info-tab :channel="channel"/>
+        <channel-info-tab :channel="channel" />
       </TabContentItem>
 
       <TabContentItem>
@@ -59,13 +42,11 @@
         </GridLayout>
       </TabContentItem>
     </Tabs>
-  </Page>
+  </PageLayout>
 </template>
 
 <script>
 import ChannelInfoTab from '../components/ChannelInfoTab'
-import * as utils from '~/shared/utils'
-import SelectedPageService from "../shared/selected-page-service"
 
 export default {
   name: 'ChannelDetails',
@@ -76,14 +57,6 @@ export default {
     channel: {
       type: Object,
       required: true
-    }
-  },
-  mounted () {
-    SelectedPageService.getInstance().updateSelectedPage('ChannelsList')
-  },
-  methods: {
-    onDrawerButtonTap () {
-      utils.showDrawer()
     }
   }
 }

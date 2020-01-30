@@ -107,7 +107,15 @@ export default {
       console.log('ITEM TAP!')
     },
     async refresh () {
-      const result = await this.$axios.get('/api/v1/channels')
+      // this.loading = true
+      // try {
+      //   const result = await this.$axios.get('/channels')
+      //   this.channels = result.data
+      // } catch (error) {
+      //   // this.$snackbar.showError(error)
+      // }
+      // this.loading = false
+      const result = await this.$axios.get('/channels')
       this.channels = result.data
     }
   }

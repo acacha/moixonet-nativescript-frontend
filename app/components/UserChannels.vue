@@ -31,6 +31,7 @@ export default {
       console.log(args)
       this.$navigateTo(ChannelDetails, {
         props: {
+          // TODO
           channel: {
             name: 'CACA'
           }

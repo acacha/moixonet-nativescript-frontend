@@ -10,6 +10,7 @@ import Home from './pages/Home'
 import DrawerContent from './components/DrawerContent'
 import eventBus from './plugins/eventBus'
 import axios from './plugins/axios'
+import PageLayout from './layouts/PageLayout'
 
 TNSFontIcon.debug = true
 TNSFontIcon.paths = {
@@ -29,6 +30,8 @@ Vue.use(RadAutoComplete)
 Vue.use(VueDevtools)
 Vue.use(eventBus)
 Vue.use(axios)
+
+Vue.component('PageLayout', PageLayout)
 
 // REAL DEVICE
 // Vue.use(VueDevtools, { host: '192.168.1.42' })
