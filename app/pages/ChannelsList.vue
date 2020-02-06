@@ -29,8 +29,8 @@ import { SnackBar } from 'nativescript-material-snackbar'
 import SelectedPageService from '../shared/selected-page-service'
 // import channelsFixture from '../../e2e/fixtures/channels'
 import * as mutations from '../store/mutation-types'
-import * as utils from '~/shared/utils'
 import api from '../store/api/channels'
+import * as utils from '~/shared/utils'
 
 const snackbar = new SnackBar()
 
