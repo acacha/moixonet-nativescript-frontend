@@ -30,6 +30,7 @@ import SelectedPageService from '../shared/selected-page-service'
 // import channelsFixture from '../../e2e/fixtures/channels'
 import * as mutations from '../store/mutation-types'
 import * as utils from '~/shared/utils'
+import api from '../store/api/channels'
 
 const snackbar = new SnackBar()
 
@@ -98,7 +99,8 @@ export default {
       //   // this.$snackbar.showError(error)
       // }
       // this.loading = false
-      const result = await this.$axios.get('/channels')
+      // const result = await this.$axios.get('/channels')
+      const result = await api.index()
       this.channels = result.data
     }
   }

@@ -90,6 +90,8 @@ myAxios.interceptors.response.use(function (response) {
 // this helps WebStorm with autocompletion, otherwise it's not needed
 Vue.prototype.$axios = myAxios
 
+export { myAxios }
+
 export default {
   install (Vue, options) {
     // Add Vue instance methods by attaching them to Vue.prototype.

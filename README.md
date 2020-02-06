@@ -58,8 +58,8 @@ this.$navigateTo(Detail, {
     - Lletra més gran
     - Més amplitud de la icona/imatge
     - En comptes de botons -> icones/botó
-- [ ] LAYOUTS de pages
-  - [ ] Evitar codi WET Copy/paste -> ActivityIndicator, ActionBar etc són iguals a cada pàgina
+- [X] LAYOUTS de pages
+  - [X] Evitar codi WET Copy/paste -> ActivityIndicator, ActionBar etc són iguals a cada pàgina
 - [X] Passar informació entre pàgines
   - [X] Master/Detail de canals
     - [X] Al fer click a un canal a la llista de canals (master) passar el canal al detail
