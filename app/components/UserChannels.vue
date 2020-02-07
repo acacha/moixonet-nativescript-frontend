@@ -33,7 +33,7 @@ export default {
         props: {
           // TODO
           channel: {
-            name: 'CACA'
+            name: 'SHIT'
           }
         }
       })

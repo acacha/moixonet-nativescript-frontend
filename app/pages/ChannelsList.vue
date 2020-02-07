@@ -9,12 +9,59 @@
         <Button text="snackbar 1" @tap="showSimpleSnackbar" />
         <Button text="snackbar 2" @tap="showActionSnackbar" />
         <Button text="snackbar 3" @tap="showColorfulSnackbar" />
-        <Label> Loading: {{ loading ? 'True': 'False' }}</Label>
-        <ListView for="channel in channels" @itemTap="onItemTap">
+        <Label @swipe="unsubscribe"> Loading: {{ loading ? 'True': 'False' }}</Label>
+        <!--        <ListView for="channel in channels" @itemTap="onItemTap">-->
+        <!--          <v-template @swipe="unsubscribe">-->
+        <!--            <Label :text="channel.name" />-->
+        <!--          </v-template>-->
+        <!--        </ListView>-->
+        <!--        <RadListView-->
+        <!--          ref="listView"-->
+        <!--          for="channel in channels"-->
+        <!--          @itemTap="onItemTap"-->
+        <!--        >-->
+        <!--          <v-template>-->
+        <!--            <StackLayout class="item" orientation="vertical">-->
+        <!--              <Label class="nameLabel">{{ channel.name }} CC</Label>-->
+        <!--            </StackLayout>-->
+        <!--          </v-template>-->
+        <!--        </RadListView>-->
+        <RadListView
+          ref="listView"
+          for="channel in channels"
+          :swipeActions="true"
+          @itemTap="onItemTap"
+          @itemSwipeProgressStarted="onSwipeStarted"
+        >
           <v-template>
-            <Label :text="channel.name" />
+            <StackLayout class="item p-t-10" orientation="vertical">
+              <Label class="nameLabel">{{ channel.name }} | FDAS</Label>
+            </StackLayout>
           </v-template>
-        </ListView>
+
+          <v-template name="itemswipe">
+            <GridLayout columns="auto, *, auto" background-color="White">
+              <StackLayout
+                id="mark-view"
+                col="0"
+                class="swipe-item left"
+                orientation="horizontal"
+                @tap="onLeftSwipeClick"
+              >
+                <Label text="mark" vertical-alignment="center" horizontal-alignment="center" />
+              </StackLayout>
+              <StackLayout
+                id="delete-view"
+                col="2"
+                class="swipe-item right"
+                orientation="horizontal"
+                @tap="onRightSwipeClick"
+              >
+                <Label text="delete" vertical-alignment="center" horizontal-alignment="center" />
+              </StackLayout>
+            </GridLayout>
+          </v-template>
+        </RadListView>
       </StackLayout>
       <GridLayout v-if="loading">
         <Label class="overlay" />
@@ -54,6 +101,24 @@ export default {
     await this.refresh()
   },
   methods: {
+    onItemTap () {
+      console.log('########## HEY!!!!!!!!!!!')
+    },
+    onSwipeStarted () {
+      console.log('********************************************************* Swipe started')
+      confirm('Esteu segurs que voleu sortir del canal?')
+        .then((result) => {
+          if (result) {
+            console.log('TODO SORTIR')
+            return
+          }
+          console.log('CANCEL!')
+        })
+    },
+
+    unsubscribe () {
+      console.log('TODO UNSUBSCRIBE!!!')
+    },
     unload () {
       this.$store.commit('axios/' + mutations.SET, { key: 'loading', value: false })
     },
@@ -86,9 +151,6 @@ export default {
     },
     onDrawerButtonTap () {
       utils.showDrawer()
-    },
-    onItemTap () {
-      console.log('ITEM TAP!')
     },
     async refresh () {
       // this.loading = true

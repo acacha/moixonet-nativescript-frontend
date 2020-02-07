@@ -1,3 +1,47 @@
+# XIVATOS | CONSOLE LOG
+
+Alguns missatges console.log en alguns casos no apareixen a la consola execució però si apareixen a:
+
+``` 
+tns device console
+``` 
+
+# ANIMATIONS/TRANSITIONS
+
+
+# GESTURES TODO
+
+- Sortir (unsubscribe) d'un canal al fer un swipe
+ - IMPORTANT: ListView de nativescript per defecte no té suport per swipe -> utilitzar RADListView
+ - https://docs.nativescript.org/vuejs/ns-ui/ListView/swipe-actions
+- Messages: mostrar opcions
+
+IMPORTANT: No em funcionen els gestures: https://github.com/NativeScript/nativescript-ui-feedback
+
+UTILITZAR:           **:swipeActions="true"** no :swipe-actions="true" ni swipeActions="true" 
+
+- 
+RadListView repas:
+
+```
+tns plugin add nativescript-ui-listview
+import RadListView from 'nativescript-ui-listview/vue'
+Vue.use(RadListView)
+``` 
+
+# GESTURES
+
+- https://docs.nativescript.org/ui/gestures
+- http://acacha.org/mediawiki/Gestures#.Xj1vDnVKhhE
+- https://whatwebcando.today/touch.html
+
+Exemples aplicació:
+
+- https://play.nativescript.org/?template=play-vue&id=C8QFJH&v=59
+
+HTML5:
+- https://whatwebcando.today/touch.html
+
 # TODO
 
 - [X] Drawer
