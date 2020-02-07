@@ -30,8 +30,10 @@
           ref="listView"
           for="channel in channels"
           :swipeActions="true"
+          :pullToRefresh="true"
           @itemTap="onItemTap"
           @itemSwipeProgressStarted="onSwipeStarted"
+          @pullToRefreshInitiated="onPullToRefreshInitiated"
         >
           <v-template>
             <StackLayout class="item p-t-10" orientation="vertical">
@@ -41,24 +43,7 @@
 
           <v-template name="itemswipe">
             <GridLayout columns="auto, *, auto" background-color="White">
-              <StackLayout
-                id="mark-view"
-                col="0"
-                class="swipe-item left"
-                orientation="horizontal"
-                @tap="onLeftSwipeClick"
-              >
-                <Label text="mark" vertical-alignment="center" horizontal-alignment="center" />
-              </StackLayout>
-              <StackLayout
-                id="delete-view"
-                col="2"
-                class="swipe-item right"
-                orientation="horizontal"
-                @tap="onRightSwipeClick"
-              >
-                <Label text="delete" vertical-alignment="center" horizontal-alignment="center" />
-              </StackLayout>
+              <Label></Label>
             </GridLayout>
           </v-template>
         </RadListView>
@@ -115,7 +100,11 @@ export default {
           console.log('CANCEL!')
         })
     },
-
+    async onPullToRefreshInitiated ({ object }) {
+      console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!! Pulling...');
+      await this.refresh()
+      object.notifyPullToRefreshFinished()
+    },
     unsubscribe () {
       console.log('TODO UNSUBSCRIBE!!!')
     },
@@ -153,6 +142,7 @@ export default {
       utils.showDrawer()
     },
     async refresh () {
+      console.log('REFRESHING!')
       // this.loading = true
       // try {
       //   const result = await this.$axios.get('/channels')
