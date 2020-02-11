@@ -21,12 +21,19 @@
         >
           <v-template>
             <GridLayout rows="auto" columns="auto, *, auto">
-              <Image row="0" col="0" :src="getImageUrl(channel)" class="thumb img-rounded m-l-10" />
+              <Image
+                decodeWidth="60"
+                decodeHeight="60"
+                loadMode="async"
+                row="0"
+                col="0"
+                src="https://loremflickr.com/60/60"
+                class="thumb img-rounded m-l-10" />
+<!--              src="https://kinsta.com/es/wp-content/uploads/sites/8/2019/09/jpg-vs-jpeg.jpg"-->
               <StackLayout row="0" col="1">
                 <Label class="list-group-item-heading">{{ channel.name }} ({{ channel.messages_number }})</Label>
                 <Label :text="'Subscrit des de ' + channel.formatted_created_at_diff" text-wrap="true" class="list-group-item-text" />
               </StackLayout>
-              <!--          // TODO -> BUTTON ACTION CAN BE MODIFIED USING SLOT. Per exemple subscriure en comptes de sortir del canal-->
               <Button col="2" text="Sortir" @tap="$emit('leave')" />
             </GridLayout>
           </v-template>
@@ -78,6 +85,8 @@ export default {
   },
   methods: {
     getImageUrl (channel) {
+      return 'https://moixonet.acacha.scool.cat/channels/published/7/image'
+      // return 'https://loremflickr.com/60/60'
       const url = baseUrl + '/channels/published/' + channel.id + '/image'
       console.log(url)
       return url

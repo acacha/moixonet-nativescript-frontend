@@ -25,6 +25,7 @@
     "nativescript-ui-listview": "^8.0.1",
     "nativescript-ui-sidedrawer": "~8.0.0",
     "nativescript-unit-test-runner": "^0.7.0",
+    "nativescript-vibrate": "^3.0.0",
     "nativescript-vue": "~2.4.0",
     "nativescript-vue-devtools": "^1.2.0",
     "rxjs": "^6.5.4",

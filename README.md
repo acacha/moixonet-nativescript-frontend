@@ -1,3 +1,72 @@
+# MULTIMEDIA
+
+## FPS
+
+https://docs.nativescript.org/ns-framework-modules/fps-meter
+
+# WHAT WEB/NATIVESCRIPT CAN DO TODAY
+
+## LOCAL STORAGE
+
+EXEMPLE AMB VUEX: https://www.nativescript.org/blog/key-value-local-storage-in-a-vue.js-nativescript-app-with-vuex
+
+- Application settings Module -> implementa SharedPreferences Android (una base de daes key/value simple!)
+- https://docs.nativescript.org/ns-framework-modules/application-settings?_ga=2.248567495.1335395219.1581447727-1514962011.1567253259
+- https://www.mikestreety.co.uk/blog/vue-js-using-localstorage-with-the-vuex-store
+- https://www.nativescript.org/blog/key-value-local-storage-in-a-vue.js-nativescript-app-with-vuex
+
+## PLATFORM
+
+https://docs.nativescript.org/ns-framework-modules/platform
+
+## ACCELEROMETER
+
+https://www.nativescript.org/blog/first-steps-in-game-dev-with-nativescript 
+https://github.com/vakrilov/nativescript-labyrinth-game
+
+## Pàgina features mòbil
+
+- [ ] Cal crear-la a nuxt-frontend i a nativeScript
+
+## GEOLOCATION
+
+- https://www.raymondcamden.com/2019/04/10/getting-location-in-nativescript
+- https://github.com/NativeScript/nativescript-geolocation
+- https://www.raymondcamden.com/2019/04/10/getting-location-in-nativescript
+- Verified plugin: https://market.nativescript.org/plugins/nativescript-geolocation
+
+### Vibrate
+
+- Nativescript Vibrate plugin: https://www.bazzite.com/docs/nativescript-vibrate/#installation | https://github.com/bazzite/nativescript-vibrate
+- Moixonet nuxt: https://whatwebcando.today/vibration.html
+
+### PERMISSIONS ANDROID
+
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+### Informació del dispositiu
+- Altres
+ - Dips i resol·lució de pantalla | Android | IOS 
+ - https://docs.nativescript.org/ns-framework-modules/platform
+- Network type and speed:  
+  - web: https://whatwebcando.today/network-type-speed.html
+  - Nativescript: https://docs.nativescript.org/ns-framework-modules/connectivity
+    - Example: https://play.nativescript.org/?template=play-vue&id=7nn3vh&v=12
+- Online state: https://whatwebcando.today/online-state.html
+- Battery Status: https://whatwebcando.today/battery-status.html
+  - Nativescript: https://github.com/philvbprogrammer/nativescript-powerinfo
+- Device memory: https://whatwebcando.today/memory.html
+  - Nativescript: no cal
+- Geolocation: https://whatwebcando.today/geolocation.html
+  - Nativescript
+- Sistema operatiu:
+  - NativeScript: https://docs.nativescript.org/ns-framework-modules/application  (application.android| application.ios)
+Que cal mostrar:
+- Tipus de connexió: no hi ha | wifi| mobile
+- Status de la xarxa: mostrar canvis a la xarxa
+- Informació de la bateria
+- Geolocalització
+
 # XIVATOS | CONSOLE LOG
 
 Alguns missatges console.log en alguns casos no apareixen a la consola execució però si apareixen a:
