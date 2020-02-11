@@ -1,4 +1,4 @@
-<!--suppress SpellCheckingInspection -->
+<!--suppress SpellCheckingInspection, HtmlUnknownTarget -->
 <template>
   <PageLayout title="CANALS PROVA" name="ChannelsList">
     <GridLayout>
@@ -10,22 +10,6 @@
         <Button text="snackbar 2" @tap="showActionSnackbar" />
         <Button text="snackbar 3" @tap="showColorfulSnackbar" />
         <Label @swipe="unsubscribe"> Loading: {{ loading ? 'True': 'False' }}</Label>
-        <!--        <ListView for="channel in channels" @itemTap="onItemTap">-->
-        <!--          <v-template @swipe="unsubscribe">-->
-        <!--            <Label :text="channel.name" />-->
-        <!--          </v-template>-->
-        <!--        </ListView>-->
-        <!--        <RadListView-->
-        <!--          ref="listView"-->
-        <!--          for="channel in channels"-->
-        <!--          @itemTap="onItemTap"-->
-        <!--        >-->
-        <!--          <v-template>-->
-        <!--            <StackLayout class="item" orientation="vertical">-->
-        <!--              <Label class="nameLabel">{{ channel.name }} CC</Label>-->
-        <!--            </StackLayout>-->
-        <!--          </v-template>-->
-        <!--        </RadListView>-->
         <RadListView
           ref="listView"
           for="channel in channels"
@@ -36,9 +20,15 @@
           @pullToRefreshInitiated="onPullToRefreshInitiated"
         >
           <v-template>
-            <StackLayout class="item p-t-10" orientation="vertical">
-              <Label class="nameLabel">{{ channel.name }} | FDAS</Label>
-            </StackLayout>
+            <GridLayout rows="auto" columns="auto, *, auto">
+              <Image row="0" col="0" :src="getImageUrl(channel)" class="thumb img-rounded m-l-10" />
+              <StackLayout row="0" col="1">
+                <Label class="list-group-item-heading">{{ channel.name }} ({{ channel.messages_number }})</Label>
+                <Label :text="'Subscrit des de ' + channel.formatted_created_at_diff" text-wrap="true" class="list-group-item-text" />
+              </StackLayout>
+              <!--          // TODO -> BUTTON ACTION CAN BE MODIFIED USING SLOT. Per exemple subscriure en comptes de sortir del canal-->
+              <Button col="2" text="Sortir" @tap="$emit('leave')" />
+            </GridLayout>
           </v-template>
 
           <v-template name="itemswipe">
@@ -61,8 +51,9 @@ import { SnackBar } from 'nativescript-material-snackbar'
 import SelectedPageService from '../shared/selected-page-service'
 // import channelsFixture from '../../e2e/fixtures/channels'
 import * as mutations from '../store/mutation-types'
-import api from '../store/api/channels'
+import api from '../store/api/channelsPublished'
 import * as utils from '~/shared/utils'
+import {baseUrl} from '../plugins/axios'
 
 const snackbar = new SnackBar()
 
@@ -86,6 +77,11 @@ export default {
     await this.refresh()
   },
   methods: {
+    getImageUrl (channel) {
+      const url = baseUrl + '/channels/published/' + channel.id + '/image'
+      console.log(url)
+      return url
+    },
     onItemTap () {
       console.log('########## HEY!!!!!!!!!!!')
     },
