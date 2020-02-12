@@ -77,7 +77,21 @@ tns device console
 
 # ANIMATIONS/TRANSITIONS
 
+- Vue transitions:
+https://www.vuemastery.com/courses/animating-vue/page-transitions
 
+Page transitions:
+- https://www.vuemastery.com/courses/animating-vue/page-transitions
+- NUXT: https://nuxtjs.org/api/pages-transition/
+- Nativescript: RadSideDrawer: Transitions Set transition with Vue https://docs.nativescript.org/vuejs/ns-ui/SideDrawer/transitions
+ - Manual routing: https://nativescript-vue.org/en/docs/routing/manual-routing/
+ 
+ Llibreries:
+ - Velocity: http://velocityjs.org/
+   - https://codepen.io/julianshapiro/full/oHaCy/
+   - EASINGS: http://vitiy.info/easing-functions-for-your-animations/
+ - GSAP:    https://greensock.com/gsap/
+ 
 # GESTURES TODO
 
 - Sortir (unsubscribe) d'un canal al fer un swipe
