@@ -6,6 +6,10 @@ https://docs.nativescript.org/ns-framework-modules/fps-meter
 
 # WHAT WEB/NATIVESCRIPT CAN DO TODAY
 
+## SHARE API
+
+- https://whatwebcando.today/app-communication.html
+
 ## LOCAL STORAGE
 
 EXEMPLE AMB VUEX: https://www.nativescript.org/blog/key-value-local-storage-in-a-vue.js-nativescript-app-with-vuex
