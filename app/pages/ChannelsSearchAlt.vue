@@ -1,7 +1,7 @@
 <template lang="html">
   <PageLayout title="Buscar canal" name="ChannelsSearchAlt">
     <StackLayout height="800">
-      <TextField @textChange="search" @returnPress="search" :text="textToSearch" hint="Enter text to search..." />
+      <TextField @textChange="search" @returnPress="search" v-model="textToSearch" hint="Enter text to search..." />
       <ListView for="foundChannel in foundChannels" @itemTap="onItemTap">
         <v-template>
           <Label :text="foundChannel.name" />

@@ -54,8 +54,8 @@ myAxios.interceptors.response.use(function (response) {
   response.request.url
   // console.log('RESPONSE CONFIG:')
   // console.log(response.config)
-  // console.log('REQUEST:')
-  // console.log(response.request)
+  console.log('REQUEST:')
+  console.log(response.request)
   // https://github.com/axios/axios#handling-errors
   if (error.response) {
     console.log('CASE 1')

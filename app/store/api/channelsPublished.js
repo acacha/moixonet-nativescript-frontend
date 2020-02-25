@@ -8,6 +8,8 @@ export default {
     return httpClient.get('/published_channels/' + channel.id)
   },
   search(textToSearch) {
+    console.log('textToSearch: ')
+    console.log(textToSearch)
     return httpClient.get('/channels/published/search/' + textToSearch)
   }
 }
