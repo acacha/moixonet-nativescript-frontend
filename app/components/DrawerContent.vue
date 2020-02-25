@@ -74,6 +74,36 @@
           <Label col="1" text="AutocompleteEx" class="p-r-10" />
         </GridLayout>
 
+        <GridLayout
+          automation-text="nav_link_autocomplete_ex"
+          columns="auto, *"
+          :class="'nt-drawer__list-item' + (selectedPage === 'ChannelsSearch' ? ' -selected': '')"
+          @tap="onNavigationItemTap(ChannelsSearch)"
+        >
+          <Label col="0" text.decode="&#xf005;" class="nt-icon fas" />
+          <Label col="1" text="ChannelsSearch" class="p-r-10" />
+        </GridLayout>
+
+        <GridLayout
+          automation-text="nav_link_autocomplete_ex"
+          columns="auto, *"
+          :class="'nt-drawer__list-item' + (selectedPage === 'Airports' ? ' -selected': '')"
+          @tap="onNavigationItemTap(Airports)"
+        >
+          <Label col="0" text.decode="&#xf005;" class="nt-icon fas" />
+          <Label col="1" text="Airports" class="p-r-10" />
+        </GridLayout>
+
+        <GridLayout
+          automation-text="nav_link_autocomplete_ex"
+          columns="auto, *"
+          :class="'nt-drawer__list-item' + (selectedPage === 'Countries' ? ' -selected': '')"
+          @tap="onNavigationItemTap(Countries)"
+        >
+          <Label col="0" text.decode="&#xf005;" class="nt-icon fas" />
+          <Label col="1" text="Countries" class="p-r-10" />
+        </GridLayout>
+
         <StackLayout class="hr" />
 
         <GridLayout
@@ -100,6 +130,9 @@ import Search from '../pages/Search'
 import Settings from '../pages/Settings'
 import ChannelsList from '../pages/ChannelsList'
 import ChannelDetails from '../pages/ChannelDetails'
+import Airports from '../pages/Airports'
+import ChannelsSearch from '../pages/ChannelsSearchExample'
+import Countries from '../pages/Countries'
 import AutocompleteEx from '../pages/AutocompleteEx'
 import * as utils from '~/shared/utils'
 import SelectedPageService from '~/shared/selected-page-service'
@@ -112,7 +145,10 @@ export default {
     Browse,
     Search,
     Settings,
-    ChannelDetails
+    ChannelDetails,
+    Airports,
+    Countries,
+    ChannelsSearch
   },
   data () {
     return {
@@ -123,6 +159,10 @@ export default {
       ChannelsList,
       AutocompleteEx,
       ChannelDetails,
+      Airports,
+      Countries,
+      ChannelDetails,
+      ChannelsSearch,
       selectedPage: ''
     }
   },

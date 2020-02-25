@@ -20,10 +20,12 @@
 </template>
 
 <script>
-import { ObservableArray } from 'tns-core-modules'
+import { ObservableArray } from 'tns-core-modules/data/observable-array';
+import { TokenModel } from 'nativescript-ui-autocomplete';
+import * as http from 'tns-core-modules/http';
 
 export default {
-  name: 'NewChannel',
+  name: 'Airports',
   data () {
     return {
       title: 'Aeroports',

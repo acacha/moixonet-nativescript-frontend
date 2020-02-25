@@ -2,7 +2,7 @@
 <template>
   <PageLayout title="Nou Canal" name="NewChannel">
     <StackLayout padding="5">
-        <Label text="Select airport"></Label>
+        <Label text="Select channel"></Label>
         <RadAutoCompleteTextView ref="autocomplete"
                                  displayMode="plain"
                                  suggestMode="Suggest"
@@ -20,13 +20,15 @@
 </template>
 
 <script>
-import { ObservableArray } from 'tns-core-modules'
+import { ObservableArray } from 'tns-core-modules/data/observable-array';
+import { TokenModel } from 'nativescript-ui-autocomplete';
+import * as http from 'tns-core-modules/http';
 
 export default {
-  name: 'NewChannel',
+  name: 'ChannelsSearch',
   data () {
     return {
-      title: 'Aeroports',
+      title: 'Canals Search',
       dataItems: new ObservableArray()
     }
   },
@@ -36,14 +38,15 @@ export default {
     }
   },
   mounted () {
-    const jsonUrl = 'https://raw.githubusercontent.com/NativeScript/nativescript-ui-samples/master/examples-data/airports.json'
+    // const jsonUrl = 'https://raw.githubusercontent.com/NativeScript/nativescript-ui-samples/master/examples-data/airports.json'
+    const jsonUrl = 'https://moixonet.acacha.scool.cat/api/v1/published_channels'
     this.$refs.autocomplete.setLoadSuggestionsAsync((text) => {
       const promise = new Promise((resolve, reject) => {
         http.getJSON(jsonUrl).then((r) => {
-          const airportsCollection = r.airports
+          const channelsCollection = r
           const items = new Array()
-          for (let i = 0; i < airportsCollection.length; i++) {
-            items.push(new TokenModel(airportsCollection[i].FIELD2, null))
+          for (let i = 0; i < channelsCollection.length; i++) {
+            items.push(new TokenModel(channelsCollection[i].name, null))
           }
           resolve(items);
         }).catch((err) => {

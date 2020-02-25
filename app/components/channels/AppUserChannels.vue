@@ -1,10 +1,11 @@
+<!--suppress HtmlUnknownTarget -->
 <template>
   <StackLayout>
     <!--    <Label class="page__content-placeholder" :text="channels" />-->
     <RadListView
       for="channel in channels"
       swipe-actions="true"
-      @itemTap="$emit('selected')"
+      @itemTap="$emit('selected',channel)"
     >
       <v-template>
         <GridLayout rows="auto" columns="auto, *, auto">
@@ -13,8 +14,7 @@
             <Label class="list-group-item-heading">{{ channel.name }} ({{ channel.messages_number }})</Label>
             <Label :text="'Subscrit des de ' + channel.created_at" text-wrap="true" class="list-group-item-text" />
           </StackLayout>
-          <!--          // TODO -> BUTTON ACTION CAN BE MODIFIED USING SLOT. Per exemple subscriure en comptes de sortir del canal-->
-          <Button col="2" text="Sortir" @tap="$emit('leave')" />
+          <Button col="2" text="Sortir" @tap="$emit('leave', channel)" />
         </GridLayout>
       </v-template>
     </RadListView>

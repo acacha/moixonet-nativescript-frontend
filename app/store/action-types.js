@@ -1,1 +1,2 @@
-// export const SET = 'SET'
+//CHANNELS
+export const LEAVE_CHANNEL='channels/LEAVE_CHANNEL'
