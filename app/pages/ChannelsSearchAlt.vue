@@ -14,6 +14,21 @@
 <script>
 import api from '../store/api/channelsPublished'
 
+const debounce = (func, wait, immediate) => {
+  let timeout
+  return function() {
+    let context = this, args = arguments
+    let later = function() {
+      timeout = null
+      if (!immediate) func.apply(context, args)
+    }
+    let callNow = immediate && !timeout
+    clearTimeout(timeout)
+    timeout = setTimeout(later, wait)
+    if (callNow) func.apply(context, args)
+  }
+}
+
 export default {
   name: 'ChannelsSearchAlt',
   data () {
@@ -26,11 +41,13 @@ export default {
     async search () {
       try {
         if (this.textToSearch === '') { return }
-        const response = await api.search(this.textToSearch)
-        console.log('Response:')
-        console.log(response)
-        console.log('Response.data:')
-        console.log(response.data)
+        // var myEfficientFn = debounce(function() {
+        //   // All the taxing stuff you do
+        // }, 250);
+        //
+        // window.addEventListener('resize', myEfficientFn);
+
+        const response = await debounce(api.search(this.textToSearch),250)
         if (response.data) this.foundChannels = response.data
       } catch (error) {
         console.log(error)
