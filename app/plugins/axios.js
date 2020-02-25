@@ -49,6 +49,13 @@ myAxios.interceptors.response.use(function (response) {
   console.log('######### RESPONSE ERROR INTERCEPTED!!!!!!!!!!!!!!!')
   console.log('ERROR:')
   console.log(error)
+  console.log('URL:')
+  let response = error.response
+  response.request.url
+  // console.log('RESPONSE CONFIG:')
+  // console.log(response.config)
+  // console.log('REQUEST:')
+  // console.log(response.request)
   // https://github.com/axios/axios#handling-errors
   if (error.response) {
     console.log('CASE 1')

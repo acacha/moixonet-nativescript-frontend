@@ -77,6 +77,16 @@
         <GridLayout
           automation-text="nav_link_autocomplete_ex"
           columns="auto, *"
+          :class="'nt-drawer__list-item' + (selectedPage === 'ChannelsSearchAlt' ? ' -selected': '')"
+          @tap="onNavigationItemTap(ChannelsSearchAlt)"
+        >
+          <Label col="0" text.decode="&#xf005;" class="nt-icon fas" />
+          <Label col="1" text="ChannelsSearchAlt" class="p-r-10" />
+        </GridLayout>
+
+        <GridLayout
+          automation-text="nav_link_autocomplete_ex"
+          columns="auto, *"
           :class="'nt-drawer__list-item' + (selectedPage === 'ChannelsSearch' ? ' -selected': '')"
           @tap="onNavigationItemTap(ChannelsSearch)"
         >
@@ -132,6 +142,7 @@ import ChannelsList from '../pages/ChannelsList'
 import ChannelDetails from '../pages/ChannelDetails'
 import Airports from '../pages/Airports'
 import ChannelsSearch from '../pages/ChannelsSearchExample'
+import ChannelsSearchAlt from '../pages/ChannelsSearchAlt'
 import Countries from '../pages/Countries'
 import AutocompleteEx from '../pages/AutocompleteEx'
 import * as utils from '~/shared/utils'
@@ -148,7 +159,8 @@ export default {
     ChannelDetails,
     Airports,
     Countries,
-    ChannelsSearch
+    ChannelsSearch,
+    ChannelsSearchAlt
   },
   data () {
     return {
@@ -163,6 +175,7 @@ export default {
       Countries,
       ChannelDetails,
       ChannelsSearch,
+      ChannelsSearchAlt,
       selectedPage: ''
     }
   },

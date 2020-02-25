@@ -6,5 +6,8 @@ export default {
   },
   show (channel) {
     return httpClient.get('/published_channels/' + channel.id)
+  },
+  search(textToSearch) {
+    return httpClient.get('/channels/published/search/' + textToSearch)
   }
 }
