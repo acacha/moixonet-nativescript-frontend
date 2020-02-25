@@ -39,7 +39,11 @@ myAxios.interceptors.response.use(function (response) {
   // Any status code that lie within the range of 2xx cause this function to trigger
   // Do something with response data
   console.log('RESPONSE INTERCEPTED!!!!!!!!!!!!!!!')
+  console.log(response)
+  console.log('STATUS:')
   console.log(response.status)
+  console.log('REQUEST:')
+  console.log(response.request)
   store.commit('axios/' + mutations.SET, { key: 'loading', value: false })
   return response
 }, function (error) {

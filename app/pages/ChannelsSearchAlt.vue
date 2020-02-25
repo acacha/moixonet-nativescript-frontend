@@ -25,8 +25,13 @@ export default {
   methods: {
     async search () {
       try {
-        const response = api.search(this.textToSearch)
-        this.foundChannels = response.data
+        if (this.textToSearch === '') { return }
+        const response = await api.search(this.textToSearch)
+        console.log('Response:')
+        console.log(response)
+        console.log('Response.data:')
+        console.log(response.data)
+        if (response.data) this.foundChannels = response.data
       } catch (error) {
         console.log(error)
       }
