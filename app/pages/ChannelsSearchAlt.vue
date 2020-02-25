@@ -47,7 +47,9 @@ export default {
         //
         // window.addEventListener('resize', myEfficientFn);
 
-        const response = await debounce(api.search(this.textToSearch),250)
+        //TODO
+        // const response = await debounce(api.search(this.textToSearch),250)
+        const response = await api.search(this.textToSearch)
         if (response.data) this.foundChannels = response.data
       } catch (error) {
         console.log(error)
