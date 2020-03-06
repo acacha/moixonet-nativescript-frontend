@@ -11,6 +11,9 @@ import DrawerContent from './components/DrawerContent'
 import eventBus from './plugins/eventBus'
 import axios from './plugins/axios'
 import PageLayout from './layouts/PageLayout'
+import * as getters from './store/getter-types'
+import * as actions from './store/action-types'
+
 
 TNSFontIcon.debug = true
 TNSFontIcon.paths = {
@@ -43,6 +46,26 @@ Vue.registerElement(
   'Fab',
   () => require('nativescript-floatingactionbutton').Fab
 )
+
+async function getChannels(){
+  return await store.dispatch('channels/' + actions.CHANNELS_INDEX)
+}
+
+// INITIAL SET STORE
+const logged = store.getters[getters.LOGGED_IN]
+
+let channels = []
+if (logged) {
+  console.log('@@@@@@@@@@@@@@@ USUARI LOGAT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+} else {
+  console.log('------------------------- USUAR NO LOGAT ---------------------')
+}
+
+try {
+  channels = getChannels()
+} catch (error) {
+  console.log(error)
+}
 
 global.vue = new Vue({
   render (h) {

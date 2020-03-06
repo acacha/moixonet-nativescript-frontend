@@ -1,11 +1,10 @@
 <template>
-  <span>
-    <template v-if="channels && channels.length > 0">
-      <Label text="prova"></Label>
+  <StackLayout>
+    <template v-if="length > 0">
       <app-user-channels :channels="channels" @leave="leave" @selected="selected" />
     </template>
     <channels-no-items v-else></channels-no-items>
-  </span>
+  </StackLayout>
 </template>
 
 <script>
@@ -22,15 +21,18 @@ export default {
     'channels-no-items': ChannelsNoItems
   },
   computed: {
+    length () {
+      return this.channels && this.channels.length
+    },
     channels() {
-      console.log('getters.CHANNELS: ')
-      console.log(getters.CHANNELS)
+      // console.log('getters.CHANNELS: ')
+      // console.log(getters.CHANNELS)
       return this.$store.getters[getters.CHANNELS]
     }
   },
   methods: {
     leave (channel) {
-      this.$store.dispatch(actions.LEAVE_CHANNEL, channel)
+      // this.$store.dispatch(actions.LEAVE_CHANNEL, channel)
     },
     selected (channel) {
       this.$navigateTo(ChannelDetails, {

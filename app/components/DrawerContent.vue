@@ -125,6 +125,16 @@
           <Label col="0" text.decode="&#xf013;" class="nt-icon fas" />
           <Label col="1" text="Settings" class="p-r-10" />
         </GridLayout>
+
+        <GridLayout
+          automation-text="nav_link_deviceinfo"
+          columns="auto, *"
+          :class="'nt-drawer__list-item' + (selectedPage === 'DeviceInfo' ? ' -selected': '')"
+          @tap="onNavigationItemTap(DeviceInfo)"
+        >
+          <Label col="0" text.decode="&#xf013;" class="nt-icon fas" />
+          <Label col="1" text="DeviceInfo" class="p-r-10" />
+        </GridLayout>
       </StackLayout>
     </ScrollView>
   </GridLayout>
@@ -145,6 +155,7 @@ import ChannelsSearch from '../pages/ChannelsSearchExample'
 import ChannelsSearchAlt from '../pages/ChannelsSearchAlt'
 import Countries from '../pages/Countries'
 import AutocompleteEx from '../pages/AutocompleteEx'
+import DeviceInfo from '../pages/DeviceInfo'
 import * as utils from '~/shared/utils'
 import SelectedPageService from '~/shared/selected-page-service'
 import url from '@/utils/url'
@@ -160,7 +171,8 @@ export default {
     Airports,
     Countries,
     ChannelsSearch,
-    ChannelsSearchAlt
+    ChannelsSearchAlt,
+    DeviceInfo
   },
   data () {
     return {
@@ -176,6 +188,7 @@ export default {
       ChannelDetails,
       ChannelsSearch,
       ChannelsSearchAlt,
+      DeviceInfo,
       selectedPage: ''
     }
   },
