@@ -135,6 +135,16 @@
           <Label col="0" text.decode="&#xf013;" class="nt-icon fas" />
           <Label col="1" text="DeviceInfo" class="p-r-10" />
         </GridLayout>
+
+        <GridLayout
+          automation-text="nav_link_counter"
+          columns="auto, *"
+          :class="'nt-drawer__list-item' + (selectedPage === 'Counter' ? ' -selected': '')"
+          @tap="onNavigationItemTap(Counter)"
+        >
+          <Label col="0" text.decode="&#xf013;" class="nt-icon fas" />
+          <Label col="1" text="Counter" class="p-r-10" />
+        </GridLayout>
       </StackLayout>
     </ScrollView>
   </GridLayout>
@@ -156,6 +166,7 @@ import ChannelsSearchAlt from '../pages/ChannelsSearchAlt'
 import Countries from '../pages/Countries'
 import AutocompleteEx from '../pages/AutocompleteEx'
 import DeviceInfo from '../pages/DeviceInfo'
+import Counter from '../pages/Counter'
 import * as utils from '~/shared/utils'
 import SelectedPageService from '~/shared/selected-page-service'
 import url from '@/utils/url'
@@ -172,7 +183,8 @@ export default {
     Countries,
     ChannelsSearch,
     ChannelsSearchAlt,
-    DeviceInfo
+    DeviceInfo,
+    Counter
   },
   data () {
     return {
@@ -189,6 +201,7 @@ export default {
       ChannelsSearch,
       ChannelsSearchAlt,
       DeviceInfo,
+      Counter,
       selectedPage: ''
     }
   },

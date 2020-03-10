@@ -2,6 +2,9 @@ import channelsData from '../data/channels.json'
 
 const STORAGE_KEY = 'moixonet-channels'
 
+/**
+ * LOCAL STORAGE NOT WORKING ON NATIVESCRIPT: https://www.nativescript.org/blog/client-side-storage-in-nativescript-applications
+ */
 export default class ChannelsService {
   fetch () {
     const channels = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')

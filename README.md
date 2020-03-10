@@ -1,3 +1,10 @@
+# APP SETTINGS (ALTERNATIVE A LOCAL STORAGE PER A NATIVESCRIPT)
+
+- https://docs.nativescript.org/angular/ng-framework-modules/application-settings
+- https://www.nativescript.org/blog/client-side-storage-in-nativescript-applications
+
+Vegeu la pàgina counter de la app del professor per veure un exemple senzill
+
 # MULTIMEDIA
 
 ## FPS
