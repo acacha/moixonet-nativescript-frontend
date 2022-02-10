@@ -64,7 +64,7 @@
     "nativescript-dev-appium": "^6.1.4-2019-11-19-01",
     "nativescript-dev-webpack": "~1.3.0",
     "nativescript-vue-template-compiler": "~2.4.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "vue-loader": "~15.4.0"
   },
   "gitHead": "6894b56740adbd34cb17ebf10afa6a05768747bf",
